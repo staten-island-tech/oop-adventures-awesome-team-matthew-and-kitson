@@ -1,13 +1,14 @@
 import json
 import os
 import random
-PName=input("What is the player's name?")
+PName=input("What is the player's name? ")
 
 class Player:
     Name=(PName)
-
+    Mainq=input("Which player type do you want to be; Warrior, Magical, or Archer?")
 class Warrior(Player):
-    q=input("Do you want to be a Knight or Tank?")
+    if Mainq=="Warrior":
+        Wq=input("Do you want to be a Knight or Tank?")
 #import
 with open("data.json", "r") as f:
     data = json.load(f)
