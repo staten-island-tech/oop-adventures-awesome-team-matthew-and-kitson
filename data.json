@@ -1,0 +1,14 @@
+[
+    {
+        "Class" : "Knight",
+        "Hp": 100,
+        "Weapons": "Sword",
+        "Moves": "e"
+    },
+    {
+        "Class" : "Knight",
+        "Hp": 150,
+        "Weapons": "Mace",
+        "Moves": "e"
+    }
+]
