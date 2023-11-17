@@ -1,0 +1,67 @@
+[
+    {
+        "Name": "Goblin",
+        "Role": "enemy",
+        "Hp": "32"
+    },
+    {
+        "Name": "Spider",
+        "Role": "enemy",
+        "Hp": "24"
+    },
+    {
+        "Name": "Slime",
+        "Role": "enemy",
+        "Hp": "12"
+    },
+    {
+        "Name": "Zombie",
+        "Role": "enemy",
+        "Hp": "43"
+    },
+    {
+        "Name": "Golem",
+        "Role": "enemy(miniboss)",
+        "Hp": "238"
+    },
+    {
+        "Name": "Litch",
+        "Role": "enemy(miniboss)",
+        "Hp": "127"
+    },
+    {
+        "Name": "Dragon",
+        "Role": "enemy(Boss)",
+        "Hp": "534"
+    },
+    {
+        "Name": "Dragon",
+        "Role": "enemy(Boss(Phase two))",
+        "Hp": "947"
+    },
+    {
+        "Name": "King",
+        "Role": "enemy(Boss)",
+        "Hp": "367"
+    },
+    {
+        "Name": "King",
+        "Role": "enemy(Boss(phase two))",
+        "Hp": "552"
+    },
+    {
+        "Name": "Hydra",
+        "Role": "enemy(Boss)",
+        "Hp": "462"
+    },
+    {
+        "Name": "Hydra",
+        "Role": "enemy(Boss(phase two))",
+        "Hp": "623"
+    },
+    {
+        "Name": "Hydra",
+        "Role": "enemy(Boss(phase three))",
+        "Hp": "829"
+    }
+]
