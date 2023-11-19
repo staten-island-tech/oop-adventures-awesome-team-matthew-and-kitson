@@ -2,13 +2,21 @@
     {
         "Class" : "Knight",
         "Hp": 100,
-        "Weapons": "Sword",
-        "Moves": "e"
+        "Weapon1": "Sword",
+        "Moves1": ["Sword Attack", "Parry", "Shield"]
     },
     {
-        "Class" : "Knight",
+        "Class" : "Tank",
         "Hp": 150,
-        "Weapons": "Mace",
-        "Moves": "e"
+        "Weapon1": ["Mace"],
+        "Moves1": ["Mace Swing"],
+        "Weapon2": ["Shield"],
+        "Moves2": ["Shield Bash", "Block"]
+    },
+    {
+        "Class" : "Mage",
+        "Hp": 80,
+        "Weapon1": "Staff",
+        "Moves1": ["Meteor Shower", "Ice Shard", "Protection Spell"]
     }
 ]
