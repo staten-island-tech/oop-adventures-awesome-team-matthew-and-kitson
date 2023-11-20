@@ -2,7 +2,7 @@ import json
 import os
 import random
 PName=input("What is the player's name? ")
-Attributes={}
+Attributes={"Player Name": PName}
 Mainq=input("Which player type do you want to be; Warrior, Magical, or Archer?")
 class Warrior():
     if Mainq=="Warrior":
@@ -12,7 +12,7 @@ class Warrior():
                 data = json.load(f)
                 print(data[1])
                 KAppend=data[1]
-                Attributes.append("Player Name": PName, KAppend)
+                Attributes.append{KAppend}
                 data.append(Attributes)
         elif Wq=="Tank":
             print("e")
