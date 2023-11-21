@@ -1,54 +1,91 @@
 [
     {
-        "Class" : "Knight",
+        "Class": "Knight",
         "Hp": 100,
         "Weapon1": "Sword",
-        "Moves1": ["Sword Attack", "Parry", "Shield"]
+        "Moves1": [
+            "Sword Attack",
+            "Parry",
+            "Shield"
+        ]
     },
     {
-        "Class" : "Tank",
+        "Class": "Tank",
         "Hp": 150,
-        "Weapon1": ["Mace"],
-        "Moves1": ["Mace Swing"],
-        "Weapon2": ["Shield"],
-        "Moves2": ["Shield Bash", "Block"]
+        "Weapon1": [
+            "Mace"
+        ],
+        "Moves1": [
+            "Mace Swing"
+        ],
+        "Weapon2": [
+            "Shield"
+        ],
+        "Moves2": [
+            "Shield Bash",
+            "Block"
+        ]
     },
     {
-        "Class" : "Mage",
+        "Class": "Mage",
         "Hp": 80,
         "Weapon1": "Staff",
-        "Moves1": ["Meteor Shower", "Ice Shard", "Protection Spell"]
-    },  
-    {
-        "Class" : "Necromancer",
-        "Hp": 85,
-        "Weapon1": ["Necromancer Staff"],
-        "Moves1": ["Summon"]
+        "Moves1": [
+            "Meteor Shower",
+            "Ice Shard",
+            "Protection Spell"
+        ]
     },
     {
-        "Class" : "Spellcaster",
+        "Class": "Necromancer",
+        "Hp": 85,
+        "Weapon1": [
+            "Necromancer Staff"
+        ],
+        "Moves1": [
+            "Summon"
+        ]
+    },
+    {
+        "Class": "Spellcaster",
         "Hp": 73,
         "Weapon1": "Magic Book",
-        "Moves1": ["Fireball", "Thunderbolt"]
+        "Moves1": [
+            "Fireball",
+            "Thunderbolt"
+        ]
     },
     {
-        "Class" : "Healer",
+        "Class": "Healer",
         "Hp": 67,
-        "Weapon1": ["Healer Staff"],
-        "Moves1": ["Heal"],
-        "Moves2": ["Staff Stab"]
+        "Weapon1": [
+            "Healer Staff"
+        ],
+        "Moves1": [
+            "Heal"
+        ],
+        "Moves2": [
+            "Staff Stab"
+        ]
     },
     {
-        "Class" : "Archer",
+        "Class": "Archer",
         "Hp": 93,
         "Weapon1": "Bow",
-        "Moves1": ["Normal Arrow", "Fire Arrow", "Ice Arrow(defensive)"]
+        "Moves1": [
+            "Normal Arrow",
+            "Fire Arrow",
+            "Ice Arrow(defensive)"
+        ]
     },
     {
-        "Class" : "Slinger",
+        "Class": "Slinger",
         "Hp": 88,
-        "Weapon1": ["Slinghsot"],
-        "Moves1": ["Slingshot Fire"]
-
+        "Weapon1": [
+            "Slinghsot"
+        ],
+        "Moves1": [
+            "Slingshot Fire"
+        ]
     }
 ]
