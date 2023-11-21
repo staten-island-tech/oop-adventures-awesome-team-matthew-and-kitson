@@ -2,8 +2,8 @@ import json
 import os
 abv=0
 PName=input("What is the player's name? ")
-with open("class.json", "r") as f:
-    data = json.load(f)
+with open("player.json", "r") as pjson:
+    data = json.load(pjson)
     class Player:
         def Create(self, i):
             PlayerName=PName
@@ -23,9 +23,9 @@ class Warrior(Player):
     if Mainq=="Warrior":
         Wq=input("Do you want to be a Knight or Tank?")
         if Wq=="Knight":
-            ab=abv+0
+            abv+0
         elif Wq=="Tank":
-            ab=abv+1
+            abv+1
         else:
             print("Error")
 
@@ -33,13 +33,13 @@ class Magical(Player):
     if Mainq=="Magical":
         Mq=input("Do you want to be a Mage, Necromancer, Spellcaster, or Healer?")
         if Mq=="Mage":
-            ab=abv+2
+            abv+2
         elif Mq=="Necromancer":
-            ab=abv+3
+            abv+3
         elif Mq=="Spellcaster":
-            ab=abv+4
+            abv+4
         elif Mq=="Healer":
-            ab=abv+5
+            abv+5
         else:
             print("Error")
 
@@ -47,21 +47,22 @@ class Archer(Player):
     if Mainq=="Archer":
         Aq=input("Do you want to be a Archer or Slinger (Slingshot)?")
         if Aq=="Archer":
-            ab=abv+6
+            abv+6
         elif Aq=="Slinger":
-            ab=abv+7
+            abv+7
         else:
             print("Error")
 
-with open("player.json", "r") as f:
-    data = json.load(f)
+with open("player.json", "r") as pjson:
+    data = json.load(pjson)
     P= Player()
-    PValues=P.Create(ab)
+    PValues=P.Create(abv)
     data.append(PValues)    
-with open("player.json", "r") as f:
-    new_file = "updated.json"
-    with open(new_file, "w") as f:
+
+new_file = "updated.json"
+with open("player.json", "r") as pjson:
+    with open(new_file, "w") as pjson:
         json_string = json.dumps(data, indent=4)
-        f.write(json_string)
-    os.remove("player.json")
-    os.rename(new_file, "player.json")
+        pjson.write(json_string)
+os.remove("player.json")
+os.rename(new_file, "player.json")
