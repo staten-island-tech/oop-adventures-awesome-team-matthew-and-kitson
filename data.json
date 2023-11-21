@@ -2,22 +2,28 @@
     {
         "Name": "Goblin",
         "Role": "enemy",
-        "Hp": "32"
+        "Hp": "32",
+        "Dmg":"12"
+        
     },
     {
         "Name": "Spider",
         "Role": "enemy",
-        "Hp": "24"
+        "Hp": "24",
+        "Dmg": "16"
     },
     {
         "Name": "Slime",
         "Role": "enemy",
-        "Hp": "12"
+        "Hp": "12",
+        "Dmg": 5
     },
     {
         "Name": "Zombie",
         "Role": "enemy",
-        "Hp": "43"
+        "Hp": "43",
+        ""
+
     },
     {
         "Name": "Golem",
