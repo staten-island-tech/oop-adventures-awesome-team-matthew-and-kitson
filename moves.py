@@ -1,3 +1,4 @@
 import random
-def SwordAttack():
-    "e"
+class Moves:
+    def SwordAttack():
+        "e"
