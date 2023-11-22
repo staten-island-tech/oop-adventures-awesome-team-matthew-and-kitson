@@ -23,9 +23,31 @@ class Warrior(Player):
     if Mainq=="Warrior":
         Wq=input("Do you want to be a Knight or Tank?")
         if Wq=="Knight":
-            abv+0
+            abv=0
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         elif Wq=="Tank":
-            abv+1
+            abv=1
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         else:
             print("Error")
 
@@ -33,13 +55,57 @@ class Magical(Player):
     if Mainq=="Magical":
         Mq=input("Do you want to be a Mage, Necromancer, Spellcaster, or Healer?")
         if Mq=="Mage":
-            abv+2
+            abv=2
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         elif Mq=="Necromancer":
-            abv+3
+            abv=3
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         elif Mq=="Spellcaster":
-            abv+4
+            abv=4
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         elif Mq=="Healer":
-            abv+5
+            abv=5
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         else:
             print("Error")
 
@@ -47,22 +113,30 @@ class Archer(Player):
     if Mainq=="Archer":
         Aq=input("Do you want to be a Archer or Slinger (Slingshot)?")
         if Aq=="Archer":
-            abv+6
+            abv=6
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         elif Aq=="Slinger":
-            abv+7
+            abv=7
+            with open("player.json", "r") as pjson:
+                data = json.load(pjson)
+                P= Player()
+                PValues=P.Create(abv)
+                data.append(PValues)
+                new_file = "updated.json"
+                with open(new_file, "w") as pjson:
+                    json_string = json.dumps(data, indent=4)
+                    pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         else:
             print("Error")
-
-with open("player.json", "r") as pjson:
-    data = json.load(pjson)
-    P= Player()
-    PValues=P.Create(abv)
-    data.append(PValues)    
-
-new_file = "updated.json"
-with open("player.json", "r") as pjson:
-    with open(new_file, "w") as pjson:
-        json_string = json.dumps(data, indent=4)
-        pjson.write(json_string)
-os.remove("player.json")
-os.rename(new_file, "player.json")
