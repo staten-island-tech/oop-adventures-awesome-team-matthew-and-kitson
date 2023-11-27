@@ -7,6 +7,7 @@ with open("player.json", "r") as pjson:
     class Player:
         def Create(self, i):
             PlayerName=PName
+            Class=data[i]['Class']
             HP=data[i]['Hp']
             Weapon1=data[i]['Weapon1']
             Moves1=data[i]['Moves1']
