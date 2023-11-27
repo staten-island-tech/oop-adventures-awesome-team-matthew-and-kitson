@@ -1,24 +1,23 @@
 import json
 import os
 
-PName=input("What is the player's name? ")
+PName=input("What is the player's name?")
 with open("player.json", "r") as pjson:
     data = json.load(pjson)
     class Player:
         def Create(self, i):
             PlayerName=PName
-            Class=data[i]['Class']
+            Pclass=data[i]['Class']
             HP=data[i]['Hp']
             Weapon1=data[i]['Weapon1']
             Moves1=data[i]['Moves1']
             if "Weapon 2" in data[i]:
                 Weapon2=data[i]['Weapon2']
                 Moves2=data[i]['Moves2']
-                PValues={'PName:':PlayerName,'HP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1,'Weapon2:':Weapon2, 'Moves2':Moves2}
+                PValues={'PName:':PlayerName,'Class:':Pclass,'HP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1,'Weapon2:':Weapon2, 'Moves2':Moves2}
             else:
                 PValues={'PName:':PlayerName,'HP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1}
             return(PValues)
-
 Mainq=input("Which player type do you want to be; Warrior, Magical, or Archer?")
 class Warrior(Player):
     if Mainq=="Warrior":
