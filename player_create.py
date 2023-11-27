@@ -1,6 +1,6 @@
 import json
 import os
-abv=0
+
 PName=input("What is the player's name? ")
 with open("player.json", "r") as pjson:
     data = json.load(pjson)
