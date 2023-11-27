@@ -9,23 +9,31 @@ class items():
 with open("item.json", "r") as ijson:
     data=json.load(ijson)
     class helmet(items):
-        def __init__(self, name,Hp, dmg):
+        def __init__(self, name,Hp):
             self.name = name.capitalize()
             self.hp = Hp.capitalize()
-            self.dmg = dmg.capitalize
     class Chestplate(items):
-    class leggings(items): 
-    class boots(items):
-    class gloves(items): 
-        def __init__(self, name,Hp, dmg):
+        def __init__(self, name,Hp):
             self.name = name.capitalize()
             self.hp = Hp.capitalize()
-            self.dmg = dmg.capitalize
+    class leggings(items):
+        def __init__(self, name,Hp):
+            self.name = name.capitalize()
+            self.hp = Hp.capitalize()
+    class boots(items):
+        def __init__(self, name,Hp):
+            self.name = name.capitalize()
+            self.hp = Hp.capitalize()
+    class gloves(items): 
+        def __init__(self, name,Hp):
+            self.name = name.capitalize()
+            self.hp = Hp.capitalize()
 with open("item.json", "r") as ijson:
     class leatherhelm(helmet):
+        equipable = "Healer"
         name = 
         hp = 
-        dmg = 
+
 
 
 
