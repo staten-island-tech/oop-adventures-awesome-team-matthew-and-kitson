@@ -1,4 +1,2 @@
 import random
-class Moves:
-    def SwordAttack():
-        "e"
+import json
