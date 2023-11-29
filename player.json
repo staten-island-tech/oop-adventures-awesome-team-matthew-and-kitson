@@ -62,9 +62,7 @@
             "Healer Staff"
         ],
         "Moves1": [
-            "Heal"
-        ],
-        "Moves2": [
+            "Heal",
             "Staff Stab"
         ]
     },
