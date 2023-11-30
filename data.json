@@ -21,9 +21,7 @@
     {
         "Name": "Zombie",
         "Role": "enemy",
-        "Hp": "43",
-        ""
-
+        "Hp": "43"
     },
     {
         "Name": "Golem",
