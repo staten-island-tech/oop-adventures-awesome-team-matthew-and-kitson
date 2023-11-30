@@ -32,51 +32,51 @@ with open("item.json", "r") as ijson:
     data = json.load(ijson)
     class leatherhelm(helmet):
         equipable = ["Healer", "SpellCaster"]
-        name = data
+        name = data[0]["Name"]
         hp = 7
     class Platehelm(helmet):
         equipable = ["Knight", "Tank"]
-        name = data
+        name = data[1]["Name"]
         hp = 17
     class Conehat(helmet):
         equipable = ["Mage", "Necromancer"]
-        name = data
+        name = data[2]["Name"]
         hp = 13
     class HeavyLeatherChest(Chestplate):
         equipable = ["Healer", "SpellCaster"]
-        name = data
+        name = data[3]["Name"]
         hp = 15
     class Robe(Chestplate):
         equipable = ["Mage", "Necromancer"]
-        name = data
+        name = data[4]["Name"]
         hp = 23
     class PlateChest(Chestplate):
         equipable = ["Knight", "Tank"]
-        name = data
+        name = data[5]["Name"]
         hp = 64
     class HeavyLeatherlegs(leggings):
         equipable = ["Healer", "SpellCaster"]
-        name = data
+        name = data[6]["Name"]
         hp = 10
     class Platelegs(leggings):
         equipable = ["Knight", "Tank"]
-        name = data
+        name = data[7]["Name"]
         hp = 23
     class trousers(leggings):
         equipable = ["Mage", "Necromancer"]
-        name = data
+        name = data[8]["Name"]
         hp = 9
     class Heavyboots(boots):
         equipable = ["Healer", "SpellCaster"]
-        name = data
+        name = data[9]["Name"]
         hp = 11
     class Clothboots(boots):
         equipable = ["Mage", "Necromancer"]
-        name = data
+        name = data[10]["Name"]
         hp = 5
     class Plateboots(boots):
         equipable = ["Knight", "Tank"]
-        name = data
+        name = data[11]["Name"]
         hp = 19
 
 
@@ -175,32 +175,3 @@ class Enemys():
         self.Dmg = Dmg.capitalize()
     def create(self):
         data.append({'Name': self.name, 'Role': self.role, 'Hp': self.Hp, 'Dmg': self.Dmg})
-
-
-with open("data.json", "r") as f:
-    # Serialize the updated Python list to a JSON string
-    data = json.load(f)
-     
-    ##Call classes in here
-    mobs = Enemys(f"{name}", f"{role}", f"{hp}", f"{Dmg}")
-    mobs.create()
-
-
-#No code needed below this line
-# Creates a new JSON file with the updated data
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(data, indent=4)
-
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
-
-# Overwrite the old JSON file with the new one
-os.remove("data.json")
-os.rename(new_file, "data.json")
-
-
-
-
-
