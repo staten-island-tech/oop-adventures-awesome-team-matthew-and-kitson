@@ -1,71 +1,72 @@
 [
     {
-        "Name": "Goblin",
-        "Role": "enemy",
-        "Hp": "32",
-        "Dmg":"12"
+        "Name:": "Goblin",
+        "Role:": "Enemy",
+        "Hp:": 32,
+        "Dmg:":12
         
     },
     {
         "Name": "Spider",
-        "Role": "enemy",
-        "Hp": "24",
-        "Dmg": "16"
+        "Role": "Enemy",
+        "Hp": 24,
+        "Dmg": 16
     },
     {
         "Name": "Slime",
-        "Role": "enemy",
-        "Hp": "12",
+        "Role": "Enemy",
+        "Hp": 12,
         "Dmg": 5
     },
     {
         "Name": "Zombie",
-        "Role": "enemy",
-        "Hp": "43"
+        "Role": "Enemy",
+        "Hp": 43,
+        "Dmg": 27
     },
     {
         "Name": "Golem",
-        "Role": "enemy(miniboss)",
-        "Hp": "238"
+        "Role": "Enemy (Miniboss)",
+        "Hp": 238
     },
     {
         "Name": "Litch",
-        "Role": "enemy(miniboss)",
-        "Hp": "127"
+        "Role": "Enemy (Miniboss)",
+        "Hp": 127
     },
     {
         "Name": "Dragon",
-        "Role": "enemy(Boss)",
-        "Hp": "534"
+        "Role": "Enemy (Boss)",
+        "Hp": 534
     },
     {
-        "Name": "Dragon",
-        "Role": "enemy(Boss(Phase two))",
-        "Hp": "947"
-    },
-    {
-        "Name": "King",
-        "Role": "enemy(Boss)",
-        "Hp": "367"
+        "Name": "Dragon Phase 2",
+        "Role": "Enemy (Boss)",
+        "Hp": 947
     },
     {
         "Name": "King",
-        "Role": "enemy(Boss(phase two))",
-        "Hp": "552"
+        "Role": "Enemy (Boss)",
+        "Hp": 367
+    },
+    {
+        "Name": "King Phase 2",
+        "Role": "Enemy (Boss)",
+        "Hp": 552
     },
     {
         "Name": "Hydra",
-        "Role": "enemy(Boss)",
-        "Hp": "462"
+        "Role": "Enemy (Boss)",
+        "Hp": 462
     },
     {
-        "Name": "Hydra",
-        "Role": "enemy(Boss(phase two))",
-        "Hp": "623"
+        "Name": "Hydra Phase 2",
+        "Role": "Enemy (Boss)",
+        "Hp": 623
     },
     {
-        "Name": "Hydra",
-        "Role": "enemy(Boss(phase three))",
-        "Hp": "829"
+        "Name": "Hydra Phase 3",
+        "Role": "Enem y(Boss)",
+        "Hp": 829
     }
 ]
