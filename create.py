@@ -29,11 +29,55 @@ with open("item.json", "r") as ijson:
             self.name = name.capitalize()
             self.hp = Hp.capitalize()
 with open("item.json", "r") as ijson:
+    data = json.load(ijson)
     class leatherhelm(helmet):
-        equipable = "Healer"
-        name = 
-        hp = 
-
+        equipable = ["Healer", "SpellCaster"]
+        name = data
+        hp = 7
+    class Platehelm(helmet):
+        equipable = ["Knight", "Tank"]
+        name = data
+        hp = 17
+    class Conehat(helmet):
+        equipable = ["Mage", "Necromancer"]
+        name = data
+        hp = 13
+    class HeavyLeatherChest(Chestplate):
+        equipable = ["Healer", "SpellCaster"]
+        name = data
+        hp = 15
+    class Robe(Chestplate):
+        equipable = ["Mage", "Necromancer"]
+        name = data
+        hp = 23
+    class PlateChest(Chestplate):
+        equipable = ["Knight", "Tank"]
+        name = data
+        hp = 64
+    class HeavyLeatherlegs(leggings):
+        equipable = ["Healer", "SpellCaster"]
+        name = data
+        hp = 10
+    class Platelegs(leggings):
+        equipable = ["Knight", "Tank"]
+        name = data
+        hp = 23
+    class trousers(leggings):
+        equipable = ["Mage", "Necromancer"]
+        name = data
+        hp = 9
+    class Heavyboots(boots):
+        equipable = ["Healer", "SpellCaster"]
+        name = data
+        hp = 11
+    class Clothboots(boots):
+        equipable = ["Mage", "Necromancer"]
+        name = data
+        hp = 5
+    class Plateboots(boots):
+        equipable = ["Knight", "Tank"]
+        name = data
+        hp = 19
 
 
 

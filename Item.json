@@ -1,0 +1,51 @@
+[
+    {
+        "Name": "Leather Helmet",
+        "Hp": "7"        
+    },
+    {
+        "Name": "Platehelm",
+        "Hp": "32"
+    },
+    {
+        "Name": "Conehat",
+        "Hp": "32"
+    },
+    {
+        "Name": "HeavyLeatherChest",
+        "Hp": "32"
+    },
+    {
+        "Name": "Robe",
+        "Hp": "32"
+    
+    },
+    {
+        "Name": "PlateChest",
+        "Hp": "32"
+    },
+    {
+        "Name": "HeavyLeatherlegs",
+        "Hp": "32"
+    },
+    {
+        "Name": "Platelegs",
+        "Hp": "32"
+    },
+    {
+        "Name": "trousers",
+        "Hp": "32"
+    },
+    {
+        "Name": "Heavyboots",
+        "Hp": "32"
+    },
+    {
+        "Name": "Clothboots",
+        "Hp": "32"
+    },
+    {
+        "Name": "Plateboots",
+        "Hp": "32"
+    }
+]
