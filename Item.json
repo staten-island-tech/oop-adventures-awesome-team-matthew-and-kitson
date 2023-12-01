@@ -5,47 +5,47 @@
     },
     {
         "Name": "Platehelm",
-        "Hp": "32"
+        "Hp": "17"
     },
     {
         "Name": "Conehat",
-        "Hp": "32"
+        "Hp": "13"
     },
     {
         "Name": "HeavyLeatherChest",
-        "Hp": "32"
+        "Hp": "15"
     },
     {
         "Name": "Robe",
-        "Hp": "32"
+        "Hp": "23"
     
     },
     {
         "Name": "PlateChest",
-        "Hp": "32"
+        "Hp": "64"
     },
     {
         "Name": "HeavyLeatherlegs",
-        "Hp": "32"
+        "Hp": "10"
     },
     {
         "Name": "Platelegs",
-        "Hp": "32"
+        "Hp": "23"
     },
     {
         "Name": "trousers",
-        "Hp": "32"
+        "Hp": "9"
     },
     {
         "Name": "Heavyboots",
-        "Hp": "32"
+        "Hp": "11"
     },
     {
         "Name": "Clothboots",
-        "Hp": "32"
+        "Hp": "5"
     },
     {
         "Name": "Plateboots",
-        "Hp": "32"
+        "Hp": "19"
     }
 ]

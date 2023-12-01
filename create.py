@@ -24,10 +24,6 @@ with open("item.json", "r") as ijson:
         def __init__(self, name,Hp):
             self.name = name.capitalize()
             self.hp = Hp.capitalize()
-    class gloves(items): 
-        def __init__(self, name,Hp):
-            self.name = name.capitalize()
-            self.hp = Hp.capitalize()
 with open("item.json", "r") as ijson:
     data = json.load(ijson)
     class leatherhelm(helmet):
@@ -173,5 +169,4 @@ class Enemys():
         self.role = role.capitalize()
         self.Hp = Hp.capitalize()
         self.Dmg = Dmg.capitalize()
-    def create(self):
-        data.append({'Name': self.name, 'Role': self.role, 'Hp': self.Hp, 'Dmg': self.Dmg})
+    
