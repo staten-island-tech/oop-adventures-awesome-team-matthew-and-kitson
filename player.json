@@ -90,7 +90,6 @@
         "PName:": "Matthew",
         "Class:": "Knight",
         "BaseHP:": 100,
-        "CurrentHP:": 100,
         "ModifiedHP:": 100,
         "Weapon1:": "Sword",
         "Moves1:": [
