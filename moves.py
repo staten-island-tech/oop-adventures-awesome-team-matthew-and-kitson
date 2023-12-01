@@ -21,8 +21,8 @@ class basicenemymoves(moves):
             with open("data.json", "r") as ejson:
                 edata = json.load(ejson)
                 enemy=edata[0]
-                e[player['CurrentHP']]=player['CurrentHP:']-enemy['Dmg:']
-                data.dump(e, pjson)
+                player['Modified:']=player['ModifiedHP:']-enemy['Dmg:']
+
 class bossmoves(moves):
     print("FILLLLLLEEEERRRR")
 e=basicenemymoves
