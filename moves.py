@@ -2,11 +2,8 @@ import random
 import json
 
 class moves():
-    def __init__(self, php, enemy, damage):
-        with open("player.json", "r") as pjson:
-            data = json.load(pjson)
-            player=data[8]
-        self.php = player['ModifiedHP']
+    def __init__(self, player, enemy, damage):
+        self.player = player
         self.enemy = enemy
         self.damage = damage
 class playermoves(moves):
@@ -19,14 +16,18 @@ class playereffectmoves(moves):
       print("FILLLLEEEERRRR")
 class basicenemymoves(moves):
     def goblinattack():
+        hplist=[player['ModifiedHP:'], ]
         with open("player.json", "r") as pjson:
             data = json.load(pjson)
             player=data[8]
             with open("data.json", "r") as ejson:
                 edata = json.load(ejson)
                 enemy=edata[0]
-                basicenemymoves.php=player['ModifiedHP:']-enemy['Dmg:']
-                print(player['Modified:'])
+                hp=player['ModifiedHP:']
+                hp=hp-enemy['Dmg:']
+                hplist.remove()
+                hplist.append(hp)
+                print(hp)
 
 class bossmoves(moves):
     print("FILLLLLLEEEERRRR")
