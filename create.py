@@ -8,6 +8,10 @@ class items():
     
 with open("item.json", "r") as ijson:
     data=json.load(ijson)
+    class Moneyitem(items):
+        def __init__(self, name,Price):
+            self.name = name.capitalize()
+            self.price = Price.capitalize()
     class helmet(items):
         def __init__(self, name,Hp):
             self.name = name.capitalize()
@@ -74,7 +78,52 @@ with open("item.json", "r") as ijson:
         equipable = ["Knight", "Tank"]
         name = data[11]["Name"]
         hp = 19
-
+    class trinket(Moneyitem):
+        name = data[]["Name"]
+        prince = 19
+    class gold_goblet(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class silver_goblet(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class gold_ring(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class silver_ring(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class gold_necklace(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class silver_necklace(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class gold_ring(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class silver_ring(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class gold_band(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class silver_band(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class gold_bangle(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class silver_bangle(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class diamond(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+    class ruby(Moneyitem):
+        name = data[]["Name"]
+        Price = 
+  
 
 
 class Enemy():
@@ -158,15 +207,3 @@ with open(new_file, "w") as f:
 
     f.write(json_string)
 
-
-name = input("Name: ")
-role = input("Role: ")
-hp = input("Hp: ")
-Dmg= input("Dmg: ")
-class Enemys():
-    def __init__(self, name, role, Hp, Dmg):
-        self.name = name.capitalize()
-        self.role = role.capitalize()
-        self.Hp = Hp.capitalize()
-        self.Dmg = Dmg.capitalize()
-    
