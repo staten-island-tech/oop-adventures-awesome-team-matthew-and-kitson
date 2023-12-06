@@ -1,5 +1,10 @@
 import random
 import json
+from moveeffects import effects
+#WILL BE TAKEN FROM SEPERATE SCRIPT/FUNCTION>>>
+i=0
+y="Sword Attack"
+#WILL BE TAKEN FROM SEPERATE SCRIPT/FUNCTION^^^
 class moves():
     def __init__(self, player, enemy, damage):
         self.player = player
@@ -21,15 +26,34 @@ def basicattack(i):
         hp=hp-enemy['Dmg:']
         hplist.append(hp)
         hplist.remove(hplist[0])
-        print(hplist[0])
+        return(hplist[0])
+def PlayerAttack(x):
+    if y in player['Moves1:'] or y in player['Moves2:']:
+        hp=enemyhplist[0]
+        hp=hp-x
+        enemyhplist.append(hp)
+        enemyhplist.remove(enemyhplist[0])
+        return(enemyhplist[0])
 class playermoves(moves):
-    def SwordAttack(y):
-        if "Sword Attack" in player['Moves1:'] or "Sword Attack" in player['Moves2:']:
-            hp=enemyhplist[0]
-            hp=hp-30
-            enemyhplist.append(hp)
-            enemyhplist.remove(enemyhplist[0])
-            print(enemyhplist[0])
+    def SwordAttack():
+        PlayerAttack(25)
+    def Parry():
+        #takes damage dealt into attack
+        PlayerAttack()
+    def MaceSwing():
+        PlayerAttack(30)
+    def ShieldBash():
+        PlayerAttack(30)
+    def MeteorShower():
+        PlayerAttack(20)
+    def Thunderbolt():
+        PlayerAttack(25)
+    def StaffStab():
+        PlayerAttack(15)
+    def NormalArrow():
+        PlayerAttack(20)
+    def SlingshotFire():
+        PlayerAttack(15)
 class playereffectmoves(moves):
       print("FILLLLEEEERRRR")
 class basicenemymoves(moves):
@@ -43,5 +67,5 @@ class basicenemymoves(moves):
         basicattack(3)
 class bossmoves(moves):
     print("FILLLLLLEEEERRRR")
-e=basicenemymoves
-e.goblinattack()
+e=playermoves
+e.SwordAttack()
