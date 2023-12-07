@@ -74,5 +74,15 @@ class basicenemymoves(moves):
 class bossmoves(moves):
     def FireBreath():
         BossMoves(50)
+    def ClawSlash():
+        BossMoves(30)
+    def TailSwing():
+        BossMoves(40)
+    def Fly():
+        BossMoves(30)
+    def SwordAttack():
+        BossMoves(45)
+    def CrownThrow():
+        BossMoves(35)
 e=bossmoves
 e.FireBreath()
