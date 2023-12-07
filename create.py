@@ -34,95 +34,107 @@ with open("item.json", "r") as ijson:
         equipable = ["Healer", "SpellCaster"]
         name = data[0]["Name"]
         hp = 7
+        price = 67
     class Platehelm(helmet):
         equipable = ["Knight", "Tank"]
         name = data[1]["Name"]
         hp = 17
+        price = 89      
     class Conehat(helmet):
         equipable = ["Mage", "Necromancer"]
         name = data[2]["Name"]
         hp = 13
+        price = 54
     class HeavyLeatherChest(Chestplate):
         equipable = ["Healer", "SpellCaster"]
         name = data[3]["Name"]
         hp = 15
+        price = 64
     class Robe(Chestplate):
         equipable = ["Mage", "Necromancer"]
         name = data[4]["Name"]
         hp = 23
+        price = 43
     class PlateChest(Chestplate):
         equipable = ["Knight", "Tank"]
         name = data[5]["Name"]
         hp = 64
+        price = 78
     class HeavyLeatherlegs(leggings):
         equipable = ["Healer", "SpellCaster"]
         name = data[6]["Name"]
         hp = 10
+        price = 56
     class Platelegs(leggings):
         equipable = ["Knight", "Tank"]
         name = data[7]["Name"]
         hp = 23
+        price = 86
     class trousers(leggings):
         equipable = ["Mage", "Necromancer"]
         name = data[8]["Name"]
         hp = 9
+        price = 43
     class Heavyboots(boots):
         equipable = ["Healer", "SpellCaster"]
         name = data[9]["Name"]
         hp = 11
+        price = 26
     class Clothboots(boots):
         equipable = ["Mage", "Necromancer"]
         name = data[10]["Name"]
         hp = 5
+        price = 12
     class Plateboots(boots):
         equipable = ["Knight", "Tank"]
         name = data[11]["Name"]
         hp = 19
+        price = 29
     class trinket(Moneyitem):
-        name = data[]["Name"]
-        prince = 19
+        name = data[12]["Name"]
+        price = 19
     class gold_goblet(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[13]["Name"]
+        Price = 43
     class silver_goblet(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[14]["Name"]
+        Price = 18
     class gold_ring(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[15]["Name"]
+        Price = 39
     class silver_ring(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[16]["Name"]
+        Price = 13
     class gold_necklace(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[17]["Name"]
+        Price = 37
     class silver_necklace(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[18]["Name"]
+        Price = 23
     class gold_ring(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[19]["Name"]
+        Price = 46
     class silver_ring(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[20]["Name"]
+        Price = 25
     class gold_band(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[21]["Name"]
+        Price = 29
     class silver_band(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[22]["Name"]
+        Price = 16
     class gold_bangle(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[23]["Name"]
+        Price = 34
     class silver_bangle(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[24]["Name"]
+        Price = 21
     class diamond(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[25]["Name"]
+        Price = 47
     class ruby(Moneyitem):
-        name = data[]["Name"]
-        Price = 
+        name = data[26]["Name"]
+        Price = 35
   
 
 
