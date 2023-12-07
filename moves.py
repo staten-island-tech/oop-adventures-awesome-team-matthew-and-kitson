@@ -16,8 +16,8 @@ with open("player.json", "r") as pjson:
     hplist=[player['ModifiedHP:']]
 with open("data.json", "r") as ejson:
     edata = json.load(ejson)
-    filler=edata[i]
-    enemyhplist=[filler['Hp:']]
+    enemy=edata[i]
+    enemyhplist=[enemy['Hp:']]
 def basicattack(i):
     with open("data.json", "r") as ejson:
         edata = json.load(ejson)
@@ -34,6 +34,12 @@ def PlayerAttack(x):
         enemyhplist.append(hp)
         enemyhplist.remove(enemyhplist[0])
         return(enemyhplist[0])
+def BossMoves(y):
+    hp=hplist[0]
+    hp=hp-y
+    hplist.append(hp)
+    hplist.remove(hplist[0])
+    print(hplist[0])
 class playermoves(moves):
     def SwordAttack():
         PlayerAttack(25)
@@ -66,6 +72,7 @@ class basicenemymoves(moves):
     def zombieattack():
         basicattack(3)
 class bossmoves(moves):
-    print("FILLLLLLEEEERRRR")
-e=playermoves
-e.SwordAttack()
+    def FireBreath():
+        BossMoves(50)
+e=bossmoves
+e.FireBreath()
