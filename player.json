@@ -73,7 +73,7 @@
         "Moves1": [
             "Normal Arrow",
             "Fire Arrow",
-            "Ice Arrow(defensive)"
+            "Ice Arrow"
         ]
     },
     {
@@ -96,6 +96,7 @@
             "Sword Attack",
             "Parry",
             "Shield"
-        ]
+        ],
+        "Gold:": 0
     }
 ]
