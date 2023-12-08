@@ -41,6 +41,7 @@ def BossMoves(y):
     hplist.remove(hplist[0])
     print(hplist[0])
 class playermoves(moves):
+    list1=['SwordAttack', 'Parry', 'MaceSwing', 'ShieldBash', 'MeteorShower', 'Thunderbolt', 'StaffStab', 'NormalArrow', 'SlingshotFire']
     def SwordAttack():
         PlayerAttack(25)
     def Parry():
@@ -80,8 +81,16 @@ class bossmoves(moves):
         BossMoves(40)
     def Fly():
         BossMoves(30)
+    def BlueFireBreath():
+        BossMoves(60)
+    def Bite():
+        BossMoves(35)
+    def Slam():
+        BossMoves(45)
     def SwordAttack():
         BossMoves(45)
+    def SwordSlam():
+
     def CrownThrow():
         BossMoves(35)
 e=bossmoves
