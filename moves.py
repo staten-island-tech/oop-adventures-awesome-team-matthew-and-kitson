@@ -90,7 +90,7 @@ class bossmoves(moves):
     def SwordAttack():
         BossMoves(45)
     def SwordSlam():
-
+        BossMoves(50)
     def CrownThrow():
         BossMoves(35)
 e=bossmoves
