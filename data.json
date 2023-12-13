@@ -1,3 +1,5 @@
+
+
 [
     {
         "Name": "Goblin",
@@ -16,7 +18,7 @@
         "Name": "Slime",
         "Role": "enemy",
         "Hp": "12",
-        "Dmg": 5
+        "Dmg": "5"
     },
     {
         "Name": "Zombie",
