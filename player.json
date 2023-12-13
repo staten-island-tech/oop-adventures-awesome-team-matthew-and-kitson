@@ -97,6 +97,7 @@
             "Parry",
             "Shield"
         ],
-        "Gold:": 0
+        "Gold:": 0,
+        "HpMultiplier:": 1
     }
 ]
