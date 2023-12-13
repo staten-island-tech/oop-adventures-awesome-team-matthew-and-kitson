@@ -1,9 +1,8 @@
-import random
 import json
 from moveeffects import effects
 #WILL BE TAKEN FROM SEPERATE SCRIPT/FUNCTION>>>
-i=0
-y="Sword Attack"
+i=input("Number 0-12")
+y=input("What move would you like to use?")
 #WILL BE TAKEN FROM SEPERATE SCRIPT/FUNCTION^^^
 class moves():
     def __init__(self, player, enemy, damage):
