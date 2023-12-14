@@ -63,8 +63,10 @@ class playermoves(moves):
 class playereffectmoves(moves):
       print("FILLLLEEEERRRR")
 class basicenemymoves(moves):
-    def goblinattack():
-        basicattack(0)
+    if i==0:
+        def goblinattack():
+            basicattack(0)
+        goblinattack()
     def spiderattack():
         basicattack(1)
     def slimeattack():
@@ -92,5 +94,6 @@ class bossmoves(moves):
         BossMoves(50)
     def CrownThrow():
         BossMoves(35)
+    
 e=bossmoves
 e.FireBreath()
