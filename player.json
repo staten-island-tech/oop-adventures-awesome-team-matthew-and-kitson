@@ -97,6 +97,8 @@
             "Parry",
             "Shield"
         ],
+        "Weapon2:": "N/A",
+        "Moves2": "N/A",
         "Gold:": 0,
         "HpMultiplier:": 1
     }
