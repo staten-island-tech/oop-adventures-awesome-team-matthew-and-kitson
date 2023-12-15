@@ -29,13 +29,23 @@ while hplist[0]>0 and enemyhplist[0]>0:
             hplist.remove(hplist[0])
             return(hplist[0])
     def PlayerAttack(x, z):
-        if y in player['Moves1:'][z] or y in player['Moves2:'][z]:
+        if y in player['Moves1:'][z]:
             hp=enemyhplist[0]
             hp=hp-x
+            enemyhplist.append(enemyhplist[0])
             enemyhplist.append(hp)
             enemyhplist.remove(enemyhplist[0])
-            print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[0], "HP!")
-            return(enemyhplist[0])
+            print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
+            return(enemyhplist[1])
+        elif 'Moves2:' in player:
+            if y in player['Moves2:'][z]:
+                hp=enemyhplist[0]
+                hp=hp-x
+                enemyhplist.append(enemyhplist[0])
+                enemyhplist.append(hp)
+                enemyhplist.remove(enemyhplist[0])
+                print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
+                return(enemyhplist[1])
     def BossMoves(y):
         hp=hplist[0]
         hp=hp-y
@@ -44,26 +54,32 @@ while hplist[0]>0 and enemyhplist[0]>0:
         print(hplist[0])
     class playermoves(moves):
         def SwordAttack():
-            PlayerAttack(25, "Sword Attack")
+            PlayerAttack(25, 0)
         SwordAttack()
         def Parry():
             #takes damage dealt into attack
-            PlayerAttack()
-        def MaceSwing():
             PlayerAttack(30, 1)
+        Parry()
+        def MaceSwing():
+            PlayerAttack(30, 2)
         MaceSwing()
         def ShieldBash():
-            PlayerAttack(30)
+            PlayerAttack(30, 0)
+        ShieldBash()
         def MeteorShower():
-            PlayerAttack(20)
+            PlayerAttack(20, 0)
+        MeteorShower()
         def Thunderbolt():
-            PlayerAttack(25)
+            PlayerAttack(25, 1)
+        Thunderbolt()
         def StaffStab():
-            PlayerAttack(15)
+            PlayerAttack(15, 2)
+        StaffStab()
         def NormalArrow():
-            PlayerAttack(20)
+            PlayerAttack(20, 0)
+        NormalArrow()
         def SlingshotFire():
-            PlayerAttack(15)
+            PlayerAttack(15, 0)
     class playereffectmoves(moves):
         print("FILLLLEEEERRRR")
     class basicenemymoves(moves):
