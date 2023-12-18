@@ -28,24 +28,34 @@ while hplist[0]>0 and enemyhplist[0]>0:
             hplist.append(hp)
             hplist.remove(hplist[0])
             return(hplist[0])
-    def PlayerAttack(x, z):
-        if y in player['Moves1:'][z]:
-            hp=enemyhplist[0]
-            hp=hp-x
-            enemyhplist.append(enemyhplist[0])
-            enemyhplist.append(hp)
-            enemyhplist.remove(enemyhplist[0])
-            print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
-            return(enemyhplist[1])
+    def PlayerAttack(x, w, z):
+        if not 'Moves2:' in player:
+            if y in player['Moves1:'][z]:
+                if y == w:
+                    if len(enemyhplist) ==1:
+                        enemyhplist.append(enemyhplist[0])
+                        hp=enemyhplist[1]
+                    else:
+                        enemyhplist.remove(enemyhplist[0])
+                        hp=enemyhplist[0]
+                    print(hp)
+                    nhp=hp-x 
+                    enemyhplist.append(nhp)
+                    if len(enemyhplist)>2:
+                        enemyhplist.remove(enemyhplist[0])
+                    print(enemyhplist)
+                    print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
+                    return(enemyhplist[1])
         elif 'Moves2:' in player:
             if y in player['Moves2:'][z]:
-                hp=enemyhplist[0]
-                hp=hp-x
-                enemyhplist.append(enemyhplist[0])
-                enemyhplist.append(hp)
-                enemyhplist.remove(enemyhplist[0])
-                print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
-                return(enemyhplist[1])
+                if y ==w:
+                    hp=enemyhplist[0]
+                    hp=hp-x
+                    enemyhplist.append(enemyhplist[0])
+                    enemyhplist.append(hp)
+                    enemyhplist.remove(enemyhplist[0])
+                    print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
+                    return(enemyhplist[1])
     def BossMoves(y):
         hp=hplist[0]
         hp=hp-y
@@ -54,32 +64,32 @@ while hplist[0]>0 and enemyhplist[0]>0:
         print(hplist[0])
     class playermoves(moves):
         def SwordAttack():
-            PlayerAttack(25, 0)
+            PlayerAttack(25, "Sword Attack", 0)
         SwordAttack()
         def Parry():
             #takes damage dealt into attack
-            PlayerAttack(30, 1)
+            PlayerAttack(30, "Parry", 1)
         Parry()
         def MaceSwing():
-            PlayerAttack(30, 2)
+            PlayerAttack(30, "Mace Swing", 2)
         MaceSwing()
         def ShieldBash():
-            PlayerAttack(30, 0)
+            PlayerAttack(30, "Shield Bash", 0)
         ShieldBash()
         def MeteorShower():
-            PlayerAttack(20, 0)
+            PlayerAttack(20, "Meteor Shower", 0)
         MeteorShower()
         def Thunderbolt():
-            PlayerAttack(25, 1)
+            PlayerAttack(25, "Thunder Bolt", 1)
         Thunderbolt()
         def StaffStab():
-            PlayerAttack(15, 2)
+            PlayerAttack(15, "Staff Stab", 2)
         StaffStab()
         def NormalArrow():
-            PlayerAttack(20, 0)
+            PlayerAttack(20, "Normal Arrow", 0)
         NormalArrow()
         def SlingshotFire():
-            PlayerAttack(15, 0)
+            PlayerAttack(15, "Slingshot Fire", 0)
     class playereffectmoves(moves):
         print("FILLLLEEEERRRR")
     class basicenemymoves(moves):
