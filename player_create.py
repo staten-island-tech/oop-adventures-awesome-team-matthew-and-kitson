@@ -12,7 +12,7 @@ with open("player.json", "r") as pjson:
             HP=data[i]['Hp']
             Weapon1=data[i]['Weapon1']
             Moves1=data[i]['Moves1']
-            if "Weapon 2" in data[i]:
+            if "Weapon2" in data[i]:
                 Weapon2=data[i]['Weapon2']
                 Moves2=data[i]['Moves2']
                 PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP, 'ModifiedHP:':HP, 'Weapon1:':Weapon1,'Moves1:':Moves1,'Weapon2:':Weapon2, 'Moves2':Moves2, 'Gold:': 0, "HpMultiplier:":1}
