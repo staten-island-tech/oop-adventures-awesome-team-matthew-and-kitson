@@ -14,6 +14,14 @@ class battle():
         print("You encounter a", enemy['Name:'],'!')
         while hplist[0]>0 and enemyhplist[1]>0:
             y=input("What move would you like to use? ")
+            if not 'Moves2:' in player:
+                if y in player['Moves1:']:         
+                    print("VALID MOVE!")
+            elif 'Moves2:' in player:
+                if y in player['Moves2:']:
+                    print("VALID MOVE!")
+            else:
+                print("INVALID MOVE")
             blocked=False
             class moves():
                 def __init__(self, player, enemy, damage):
@@ -29,8 +37,8 @@ class battle():
                     hplist.append(hp)
                     hplist.remove(hplist[0])
                     print(enemy['Name:'], "attacked!", player['PName:'], "has", hp, "HP!")
-                    return(hplist[0])
-            def Check(w, z):
+                    return(hplist[0])      
+            def EffectCheck(w, z):
                 if not 'Moves2:' in player:
                     if y in player['Moves1:'][z]:
                         if y == w:
@@ -71,9 +79,7 @@ class battle():
                             if len(enemyhplist)>2:
                                 enemyhplist.remove(enemyhplist[0])
                             print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
-                            return(enemyhplist[1])
-                else:
-                    print("INVALID MOVE")          
+                            return(enemyhplist[1])   
             def BossMoves(y):
                 hp=hplist[0]
                 hp=hp-y
@@ -110,13 +116,14 @@ class battle():
                     PlayerAttack(15, "Slingshot Fire", 0)
                 SlingshotFire()
             class playereffectmoves(moves):
-                def block():
-                    if Check==True:
+                def Shield():
+                    if EffectCheck==True:
+                        effects.blockthingy()
                         if effects.blockthingy() == True:
                             blocked==True
                     else:
                         return(False)
-                block()
+                Shield()
             class basicenemymoves(moves):
                 def goblinattack():
                     basicattack(0)
