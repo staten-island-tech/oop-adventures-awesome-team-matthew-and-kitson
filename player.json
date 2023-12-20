@@ -88,17 +88,22 @@
     },
     {
         "PName:": "Matthew",
-        "Class:": "Knight",
-        "BaseHP:": 100,
-        "ModifiedHP:": 100,
-        "Weapon1:": "Sword",
+        "Class:": "Tank",
+        "BaseHP:": 150,
+        "ModifiedHP:": 150,
+        "Weapon1:": [
+            "Mace"
+        ],
         "Moves1:": [
-            "Sword Attack",
-            "Parry",
+            "Mace Swing"
+        ],
+        "Weapon2:": [
             "Shield"
         ],
-        "Weapon2:": "N/A",
-        "Moves2": "N/A",
+        "Moves2": [
+            "Shield Bash",
+            "Block"
+        ],
         "Gold:": 0,
         "HpMultiplier:": 1
     }
