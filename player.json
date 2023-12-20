@@ -1,0 +1,105 @@
+[
+    {
+        "Class": "Knight",
+        "Hp": 100,
+        "Weapon1": "Sword",
+        "Moves1": [
+            "Sword Attack",
+            "Parry",
+            "Shield"
+        ]
+    },
+    {
+        "Class": "Tank",
+        "Hp": 150,
+        "Weapon1": [
+            "Mace"
+        ],
+        "Moves1": [
+            "Mace Swing"
+        ],
+        "Weapon2": [
+            "Shield"
+        ],
+        "Moves2": [
+            "Shield Bash",
+            "Block"
+        ]
+    },
+    {
+        "Class": "Mage",
+        "Hp": 80,
+        "Weapon1": "Staff",
+        "Moves1": [
+            "Meteor Shower",
+            "Ice Shard",
+            "Protection Spell"
+        ]
+    },
+    {
+        "Class": "Necromancer",
+        "Hp": 85,
+        "Weapon1": [
+            "Necromancer Staff"
+        ],
+        "Moves1": [
+            "Summon"
+        ]
+    },
+    {
+        "Class": "Spellcaster",
+        "Hp": 73,
+        "Weapon1": "Magic Book",
+        "Moves1": [
+            "Fireball",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "Class": "Healer",
+        "Hp": 67,
+        "Weapon1": [
+            "Healer Staff"
+        ],
+        "Moves1": [
+            "Heal",
+            "Staff Stab"
+        ]
+    },
+    {
+        "Class": "Archer",
+        "Hp": 93,
+        "Weapon1": "Bow",
+        "Moves1": [
+            "Normal Arrow",
+            "Fire Arrow",
+            "Ice Arrow"
+        ]
+    },
+    {
+        "Class": "Slinger",
+        "Hp": 88,
+        "Weapon1": [
+            "Slinghsot"
+        ],
+        "Moves1": [
+            "Slingshot Fire"
+        ]
+    },
+    {
+        "PName:": "Matthew",
+        "Class:": "Knight",
+        "BaseHP:": 100,
+        "ModifiedHP:": 100,
+        "Weapon1:": "Sword",
+        "Moves1:": [
+            "Sword Attack",
+            "Parry",
+            "Shield"
+        ],
+        "Weapon2:": "N/A",
+        "Moves2": "N/A",
+        "Gold:": 0,
+        "HpMultiplier:": 1
+    }
+]
