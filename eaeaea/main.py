@@ -25,9 +25,10 @@ class merchant():
  
     for i in (data): 
         if find in i['Name']:
-            item = i['Name']
+            item = i['Name'] 
+            me.inventory.append(item)
     if item == find:
-        print("you have sold 'Name' for 'price' ")
+        print("you have sold" item['Name:'] "for" item['Price:'])
     if item == None:
         print("you do not have this item or it is of no value")
 
