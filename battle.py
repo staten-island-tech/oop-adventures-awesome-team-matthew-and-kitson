@@ -6,7 +6,8 @@ class battle():
         with open("player.json", "r") as pjson:
             data = json.load(pjson)
             player=data[8]
-            hplist=[player['ModifiedHP:']]
+            x=player['BaseHP:']*player['HpMultiplier:']
+            hplist=[x]
         with open("data.json", "r") as ejson:
             edata = json.load(ejson)
             enemy=edata[i]
@@ -14,11 +15,11 @@ class battle():
         print("You encounter a", enemy['Name:'],'!')
         while hplist[0]>0 and enemyhplist[1]>0:
             y=input("What move would you like to use? ")
-            if not 'Moves2:' in player:
+            if not 'Moves2' in player:
                 if y in player['Moves1:']:         
                     print("VALID MOVE!")
-            elif 'Moves2:' in player:
-                if y in player['Moves2:']:
+            elif 'Moves2' in player:
+                if y in player['Moves2']:
                     print("VALID MOVE!")
             else:
                 print("INVALID MOVE")
@@ -39,20 +40,20 @@ class battle():
                     print(enemy['Name:'], "attacked!", player['PName:'], "has", hp, "HP!")
                     return(hplist[0])      
             def EffectCheck(w, z):
-                if not 'Moves2:' in player:
+                if not 'Moves2' in player:
                     if y in player['Moves1:'][z]:
                         if y == w:
                             return(True)
-                elif 'Moves2:' in player:
-                    if y in player['Moves2:'][z]:
+                elif 'Moves2' in player:
+                    if y in player['Moves2'][z]:
                         if y ==w:
                             return(True)
                 else:
                     return(False)       
             def PlayerAttack(x, w, z):
-                if not 'Moves2:' in player:
-                    if y in player['Moves1:'][z]:
-                        if y == w:
+                if y==w:
+                    if not 'Moves2' in player:
+                        if y in player['Moves1:'][z]:
                             if len(enemyhplist) ==1:
                                 enemyhplist.append(enemyhplist[0])
                                 hp=enemyhplist[1]
@@ -65,9 +66,8 @@ class battle():
                                 enemyhplist.remove(enemyhplist[0])
                             print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
                             return(enemyhplist[1])
-                elif 'Moves2:' in player:
-                    if y in player['Moves2:'][z]:
-                        if y ==w:
+                    elif 'Moves2' in player:
+                        if y in player['Moves2'][z]:
                             if len(enemyhplist) ==1:
                                 enemyhplist.append(enemyhplist[0])
                                 hp=enemyhplist[1]
