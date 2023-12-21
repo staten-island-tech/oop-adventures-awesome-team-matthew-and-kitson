@@ -90,7 +90,6 @@
         "PName:": "Matthew",
         "Class:": "Tank",
         "BaseHP:": 150,
-        "ModifiedHP:": 150,
         "Weapon1:": [
             "Mace"
         ],
@@ -104,7 +103,6 @@
             "Shield Bash",
             "Block"
         ],
-        "Gold:": 0,
         "HpMultiplier:": 1
     }
 ]
