@@ -7,7 +7,8 @@ i=0
 with open("player.json", "r") as pjson:
     data = json.load(pjson)
     player=data[8]
-    hplist=[player['ModifiedHP:']]
+    x=player['BaseHP:']*player['HpMultiplier:']
+    hplist=[x]
 with open("data.json", "r") as ejson:
     edata = json.load(ejson)
     enemy=edata[i]
