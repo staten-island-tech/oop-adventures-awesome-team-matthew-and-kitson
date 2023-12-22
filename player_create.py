@@ -17,7 +17,7 @@ with open("player.json", "r") as pjson:
                 Moves2=data[i]['Moves2']
                 PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1,'Weapon2:':Weapon2, 'Moves2':Moves2, 'Gold:': 0, "HpMultiplier:":1}
             else:
-                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1, 'Weapon2:':"N/A", 'Moves2':"N/A", 'Gold:': 0, "HpMultiplier:":1}
+                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1, 'Gold:': 0, "HpMultiplier:":1}
             return(PValues)
         def Create2(self, x):
             with open("player.json", "r") as pjson:
