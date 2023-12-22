@@ -52,7 +52,7 @@ class battle():
                     return(False)       
             def PlayerAttack(x, w, z):
                 if y==w:
-                    if not 'Moves2' in player:
+                    if not y in 'Moves2' in player:
                         if y in player['Moves1:'][z]:
                             if len(enemyhplist) ==1:
                                 enemyhplist.append(enemyhplist[0])
@@ -66,8 +66,7 @@ class battle():
                                 enemyhplist.remove(enemyhplist[0])
                             print(enemy["Name:"], "took", x, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
                             return(enemyhplist[1])
-                    elif 'Moves2' in player:
-                        if y in player['Moves2'][z]:
+                    elif y in player['Moves2'][z]:
                             if len(enemyhplist) ==1:
                                 enemyhplist.append(enemyhplist[0])
                                 hp=enemyhplist[1]
