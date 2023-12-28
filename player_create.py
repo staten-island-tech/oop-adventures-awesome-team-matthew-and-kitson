@@ -11,13 +11,12 @@ with open("player.json", "r") as pjson:
             Pclass=data[i]['Class']
             HP=data[i]['Hp']
             Weapon1=data[i]['Weapon1']
-            Moves1=data[i]['Moves1']
+            Moves=data[i]['Moves']
             if "Weapon2" in data[i]:
                 Weapon2=data[i]['Weapon2']
-                Moves2=data[i]['Moves2']
-                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1,'Weapon2:':Weapon2, 'Moves2':Moves2, 'Gold:': 0, "HpMultiplier:":1}
+                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Weapon2:':Weapon2, 'Moves:': Moves, 'Gold:': 0, "HpMultiplier:":1, "DmgMultiplier:":1}
             else:
-                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Moves1:':Moves1, 'Gold:': 0, "HpMultiplier:":1}
+                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Moves:':Moves, 'Gold:': 0, "HpMultiplier:":1, "DmgMultiplier:":1}
             return(PValues)
         def Create2(self, x):
             with open("player.json", "r") as pjson:
@@ -31,11 +30,24 @@ with open("player.json", "r") as pjson:
                     pjson.write(json_string)
             os.remove("player.json")
             os.rename(new_file, "player.json")
+        def info_check(self, x):
+            with open("player.json", "r") as pjson:
+                PValues=P.Create(x)
+                print(PValues)
+
 P= Player()
 e=True
 while e ==True:
-    Mainq=input("Which player type do you want to be; Warrior, Magical, or Archer? ")
-    break
+    Mainq=input("Which player type do you want to be; Warrior, Magical, or Archer? Enter 'Info' for info on classes. ")
+    if Mainq=="Warrior" or Mainq=="Magical" or Mainq=="Archer":
+        break
+    elif Mainq=='Info':
+        with open("player.json", "r") as pjson:
+            data = json.load(pjson)
+            for i in range(len(data)):
+                print(data[i])
+    else:
+        print("Enter a valid class.")
 class Warrior(Player):
     if Mainq=="Warrior":
         x=True
