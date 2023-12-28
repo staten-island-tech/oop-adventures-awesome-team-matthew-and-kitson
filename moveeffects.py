@@ -1,2 +1,0 @@
-class effects:
-    print("e")
