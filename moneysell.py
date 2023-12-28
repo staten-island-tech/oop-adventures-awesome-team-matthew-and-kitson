@@ -1,7 +1,6 @@
 from merchant import Merchant
 from hero import Hero
 import json
-
 guy=Merchant("Name", ["ruby", "diamond", "silver_band", "gold_band"])
 player=Hero("Me", 500, [])
 def buy(x):
