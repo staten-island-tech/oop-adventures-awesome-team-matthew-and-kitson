@@ -3,9 +3,8 @@
         "Class": "Knight",
         "Hp": 100,
         "Weapon1": "Sword",
-        "Moves1": [
+        "Moves": [
             "Sword Attack",
-            "Parry",
             "Shield"
         ]
     },
@@ -15,13 +14,11 @@
         "Weapon1": [
             "Mace"
         ],
-        "Moves1": [
-            "Mace Swing"
-        ],
         "Weapon2": [
             "Shield"
         ],
-        "Moves2": [
+        "Moves": [
+            "Mace Swing",
             "Shield Bash",
             "Block"
         ]
@@ -30,7 +27,7 @@
         "Class": "Mage",
         "Hp": 80,
         "Weapon1": "Staff",
-        "Moves1": [
+        "Moves": [
             "Meteor Shower",
             "Ice Shard",
             "Protection Spell"
@@ -42,7 +39,7 @@
         "Weapon1": [
             "Necromancer Staff"
         ],
-        "Moves1": [
+        "Moves": [
             "Summon"
         ]
     },
@@ -50,7 +47,7 @@
         "Class": "Spellcaster",
         "Hp": 73,
         "Weapon1": "Magic Book",
-        "Moves1": [
+        "Moves": [
             "Fireball",
             "Thunderbolt"
         ]
@@ -61,7 +58,7 @@
         "Weapon1": [
             "Healer Staff"
         ],
-        "Moves1": [
+        "Moves": [
             "Heal",
             "Staff Stab"
         ]
@@ -70,7 +67,7 @@
         "Class": "Archer",
         "Hp": 93,
         "Weapon1": "Bow",
-        "Moves1": [
+        "Moves": [
             "Normal Arrow",
             "Fire Arrow",
             "Ice Arrow"
@@ -82,27 +79,22 @@
         "Weapon1": [
             "Slinghsot"
         ],
-        "Moves1": [
+        "Moves": [
             "Slingshot Fire"
         ]
     },
     {
         "PName:": "Matthew",
-        "Class:": "Tank",
-        "BaseHP:": 150,
-        "Weapon1:": [
-            "Mace"
+        "Class:": "Archer",
+        "BaseHP:": 93,
+        "Weapon1:": "Bow",
+        "Moves:": [
+            "Normal Arrow",
+            "Fire Arrow",
+            "Ice Arrow"
         ],
-        "Moves1:": [
-            "Mace Swing"
-        ],
-        "Weapon2:": [
-            "Shield"
-        ],
-        "Moves2": [
-            "Shield Bash",
-            "Block"
-        ],
-        "HpMultiplier:": 1
+        "Gold:": 0,
+        "HpMultiplier:": 1,
+        "DmgMultiplier:": 1
     }
 ]
