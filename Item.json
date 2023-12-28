@@ -1,0 +1,123 @@
+[
+    {
+        "Name": "Leather Helmet",
+        "Hp": "7",
+        "Price": "67"        
+    },
+    {
+        "Name": "Platehelm",
+        "Hp": "17",
+        "Price": "89"   
+    },
+    {
+        "Name": "Conehat",
+        "Hp": "13",
+        "Price": "54" 
+    },
+    {
+        "Name": "HeavyLeatherChest",
+        "Hp": "15",
+        "Price": "64" 
+    },
+    {
+        "Name": "Robe",
+        "Hp": "23",
+        "Price": "43" 
+    
+    },
+    {
+        "Name": "PlateChest",
+        "Hp": "64",
+        "Price": "78" 
+    },
+    {
+        "Name": "HeavyLeatherlegs",
+        "Hp": "10",
+        "Price": "56" 
+    },
+    {
+        "Name": "Platelegs",
+        "Hp": "23",
+        "Price": "86" 
+    },
+    {
+        "Name": "trousers",
+        "Hp": "9",
+        "Price": "43" 
+    },
+    {
+        "Name": "Heavyboots",
+        "Hp": "11",
+        "Price": "26" 
+    },
+    {
+        "Name": "Clothboots",
+        "Hp": "5",
+        "Price": "12" 
+    },
+    {
+        "Name": "Plateboots",
+        "Hp": "19",
+        "Price": "29" 
+    },
+    {
+        "Name": "trinket",
+        "Price": "19"        
+    },
+    {
+        "Name": "gold goblet",
+        "Price": "43"
+    },
+    {
+        "Name": "silver goblet",
+        "Price": "18"
+    },
+    {
+        "Name": "gold ring",
+        "Price": "39"        
+    },
+    {
+        "Name": "silver ring",
+        "Price": "13"
+    },
+    {
+        "Name": "gold necklace",
+        "Price": "37"
+    },    
+    {
+        "Name": "silver necklaceace",
+        "Price": "23"        
+    },
+    {
+        "Name": "gold ring",
+        "Price": "46"
+    },
+    {
+        "Name": "silver ring",
+        "Price": "25"
+    },
+    {
+        "Name": "gold band",
+        "Price": "29"        
+    },
+    {
+        "Name": "silver band",
+        "Price": "17"
+    },
+    {
+        "Name": "gold bangle",
+        "Price": "34"
+    },
+    {
+        "Name": "silver bangle",
+       "Price": "29"        
+    },
+    {
+        "Name": "diamond",
+        "Price": "47"
+    },
+    {
+        "Name": "ruby",
+        "Price": "35"
+    }  
+]
