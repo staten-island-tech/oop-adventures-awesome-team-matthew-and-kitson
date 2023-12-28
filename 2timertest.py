@@ -1,6 +1,5 @@
 import random
 import time
-
 def block():
   t_time = random.randint(1, 5)
   t1 = time.time()
