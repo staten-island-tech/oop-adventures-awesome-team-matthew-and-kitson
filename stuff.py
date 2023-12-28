@@ -1,221 +1,86 @@
 import json
-import os
 
-## Create Class for creating new dictionaries here
 class items():
     def __init__(self, name):
         self.name = name.capitalize()
-    
+class Moneyitem(items):
+    def __init__(self, name, Price):
+        self.name = name.capitalize()
+        self.price = Price.capitalize() 
 with open("item.json", "r") as ijson:
     data=json.load(ijson)
-    class Moneyitem(items):
-        def __init__(self, name,Price):
-            self.name = name.capitalize()
-            self.price = Price.capitalize()
+    trinket=Moneyitem(data[12]["Name"], 19)
+    gold_goblet=Moneyitem(data[13]["Name"], 43)
+    silver_goblet=Moneyitem(data[14]["Name"], 18)
+    gold_ring=Moneyitem(data[15]["Name"], 39)
+    silver_ring=Moneyitem(data[16]["Name"], 13)
+    gold_necklace=Moneyitem(data[17]["Name"], 37)
+    silver_necklace=Moneyitem(data[18]["Name"], 23)
+    gold_ring=Moneyitem(data[19]["Name"], 46)
+    silver_ring=Moneyitem(data[20]["Name"], 25)
+    gold_band=Moneyitem(data[21]["Name"], 29)
+    silver_band=Moneyitem(data[22]["Name"])
+    gold_bangle=Moneyitem(data[23]["Name"], 34)
+    silver_bangle=Moneyitem(data[24]["Name"], 21)
+    diamond=Moneyitem(data[25]["Name"], 47)
+    ruby=Moneyitem(data[26]["Name"], 35)
     class helmet(items):
-        def __init__(self, name,Hp):
+        def __init__(self, equipable, name, Hp, price):
+            self.equipable=equipable
             self.name = name.capitalize()
-            self.hp = Hp.capitalize()
+            self.Hp = Hp
+            self.price=price
+    LeatherHelmet=helmet(["Healer", "SpellCaster"], data[0]["Name"], 7, 67)
+    PlateHelmet=helmet(["Knight", "Tank"], data[1]["Name"], 17, 89)
+    ConeHat=helmet(["Mage", "Necromancer"], data[2]["Name"], 13, 54)
     class Chestplate(items):
-        def __init__(self, name,Hp):
+        def __init__(self, equipable, name, Hp, price):
+            self.equipable=equipable
             self.name = name.capitalize()
-            self.hp = Hp.capitalize()
+            self.Hp = Hp
+            self.price=price
+    LeatherChestplate=Chestplate(["Healer", "SpellCaster"], data[3]["Name"], .1, 64)
+    Robe=Chestplate(["Mage", "Necromancer"], data[4]["Name"], .3, 43)
+    PlateChest=Chestplate(["Knight", "Tank"], data[5]["Name"], .5, 78)
     class leggings(items):
-        def __init__(self, name,Hp):
+        def __init__(self, equipable, name, Hp, price):
+            self.equipable=equipable
             self.name = name.capitalize()
-            self.hp = Hp.capitalize()
+            self.Hp = Hp
+            self.price=price
+    LeatherLeggings=leggings(["Healer", "SpellCaster"], data[6]["Name"], 10, 56)
+    PlateLeggings=leggings(["Knight", "Tank"], data[7]["Name"], 23, 86)
+    Trousers=leggings(["Mage", "Necromancer"], data[8]["Name"], 8, 43)
     class boots(items):
-        def __init__(self, name,Hp):
+        def __init__(self, equipable, name, Hp, price):
+            self.equipable=equipable
             self.name = name.capitalize()
-            self.hp = Hp.capitalize()
-with open("item.json", "r") as ijson:
-    data = json.load(ijson)
-    class leatherhelm(helmet):
-        equipable = ["Healer", "SpellCaster"]
-        name = data[0]["Name"]
-        hp = 7
-        price = 67
-    class Platehelm(helmet):
-        equipable = ["Knight", "Tank"]
-        name = data[1]["Name"]
-        hp = 17
-        price = 89      
-    class Conehat(helmet):
-        equipable = ["Mage", "Necromancer"]
-        name = data[2]["Name"]
-        hp = 13
-        price = 54
-    class HeavyLeatherChest(Chestplate):
-        equipable = ["Healer", "SpellCaster"]
-        name = data[3]["Name"]
-        hp = 15
-        price = 64
-    class Robe(Chestplate):
-        equipable = ["Mage", "Necromancer"]
-        name = data[4]["Name"]
-        hp = 23
-        price = 43
-    class PlateChest(Chestplate):
-        equipable = ["Knight", "Tank"]
-        name = data[5]["Name"]
-        hp = 64
-        price = 78
-    class HeavyLeatherlegs(leggings):
-        equipable = ["Healer", "SpellCaster"]
-        name = data[6]["Name"]
-        hp = 10
-        price = 56
-    class Platelegs(leggings):
-        equipable = ["Knight", "Tank"]
-        name = data[7]["Name"]
-        hp = 23
-        price = 86
-    class trousers(leggings):
-        equipable = ["Mage", "Necromancer"]
-        name = data[8]["Name"]
-        hp = 9
-        price = 43
-    class Heavyboots(boots):
-        equipable = ["Healer", "SpellCaster"]
-        name = data[9]["Name"]
-        hp = 11
-        price = 26
-    class Clothboots(boots):
-        equipable = ["Mage", "Necromancer"]
-        name = data[10]["Name"]
-        hp = 5
-        price = 12
-    class Plateboots(boots):
-        equipable = ["Knight", "Tank"]
-        name = data[11]["Name"]
-        hp = 19
-        price = 29
-    class trinket(Moneyitem):
-        name = data[12]["Name"]
-        price = 19
-    class gold_goblet(Moneyitem):
-        name = data[13]["Name"]
-        Price = 43
-    class silver_goblet(Moneyitem):
-        name = data[14]["Name"]
-        Price = 18
-    class gold_ring(Moneyitem):
-        name = data[15]["Name"]
-        Price = 39
-    class silver_ring(Moneyitem):
-        name = data[16]["Name"]
-        Price = 13
-    class gold_necklace(Moneyitem):
-        name = data[17]["Name"]
-        Price = 37
-    class silver_necklace(Moneyitem):
-        name = data[18]["Name"]
-        Price = 23
-    class gold_ring(Moneyitem):
-        name = data[19]["Name"]
-        Price = 46
-    class silver_ring(Moneyitem):
-        name = data[20]["Name"]
-        Price = 25
-    class gold_band(Moneyitem):
-        name = data[21]["Name"]
-        Price = 29
-    class silver_band(Moneyitem):
-        name = data[22]["Name"]
-        Price = 16
-    class gold_bangle(Moneyitem):
-        name = data[23]["Name"]
-        Price = 34
-    class silver_bangle(Moneyitem):
-        name = data[24]["Name"]
-        Price = 21
-    class diamond(Moneyitem):
-        name = data[25]["Name"]
-        Price = 47
-    class ruby(Moneyitem):
-        name = data[26]["Name"]
-        Price = 35
-  
-
-
+            self.Hp = Hp
+            self.price=price
+    LeatherBoots=boots(["Mage", "Necromancer"], data[10]["Name"], 5, 12)
+    HeavyBoots=boots(["Healer", "SpellCaster"], data[9]["Name"], 11, 26)
+    PlateBoots=boots(["Knight", "Tank"], data[11]["Name"], 19, 29)
 class Enemy():
-    def __init__(self, name, role, Hp, dmg):
+    def __init__(self, name, json_num, Hp, dmg, exp):
         self.name = name.capitalize()
-        self.role = role.capitalize()
-        self.hp = Hp.capitalize()
-        self.dmg = dmg.capitalize
+        self.json_num = json_num
+        self.Hp = Hp
+        self.dmg = dmg
+        self.exp = exp
+class Boss(Enemy):
+    def __init__(self, name, json_num, Hp, exp):
+        self.name = name.capitalize()
+        self.json_num = json_num
+        self.hp = Hp
+        self.exp = exp
 with open("data.json", "r") as djson:
     data = json.load(djson)
-    class goblin(Enemy):
-        name = data[0]["Name"]
-        role = data[0]["Role"]
-        hp = data[0]["Hp"]
-        dmg = data[0]["Dmg"]
-    class spider(Enemy):
-        name = data[1]["Name"]
-        role = data[1]["Role"]
-        hp = data[1]["Hp"]
-        dmg = data[1]["Dmg"]
-    class slime(Enemy):
-        name = data[2]["Name"]
-        role = data[2]["Role"]
-        hp = data[2]["Hp"]
-        dmg = data[2]["Dmg"]
-    class zombie(Enemy):
-        name = data[3]["Name"]
-        role = data[3]["Role"]
-        hp = data[3]["Hp"]
-        dmg = data[3]["Dmg"]
-    class Golem(Enemy):
-        name = data[4]["Name"]
-        role = data[4]["Role"]
-        hp = data[4]["Hp"]
-    class litch(Enemy):
-        name = data[5]["Name"]
-        role = data[5]["Role"]
-        hp = data[5]["Hp"]
-    class Dragon(Enemy):
-        name = data[6]["Name"]
-        role = data[6]["Role"]
-        hp = data[6]["Hp"]
-    class Dragonphase2(Enemy):
-        name = data[7]["Name"]
-        role = data[7]["Role"]
-        hp = data[7]["Hp"]  
-    class King(Enemy):
-        name = data[8]["Name"]
-        role = data[8]["Role"]
-        hp = data[8]["Hp"] 
-    class KingPhase2(Enemy):
-        name = data[9]["Name"]
-        role = data[9]["Role"]
-        hp = data[9]["Hp"] 
-    class Hydra(Enemy):
-        name = data[10]["Name"]
-        role = data[10]["Role"]
-        hp = data[10]["Hp"] 
-    class Hydraphase2(Enemy):
-        name = data[11]["Name"]
-        role = data[11]["Role"]
-        hp = data[11]["Hp"]
-    class Hydraphase3(Enemy):
-        name = data[12]["Name"]
-        role = data[12]["Role"]
-        hp = data[12]["Hp"]
-with open("data.json", "r") as f:   
-    data = json.load(f)
-
-
-
-
-
-new_file = "updated.json"
-with open(new_file, "w") as f:
-
-
-
-    json_string = json.dumps(data, indent=4)
-
-
-    f.write(json_string)
-
+    goblin=Enemy(data[0]["Name"], 0, data[0]["Hp"], data[0]["Dmg"], 5)
+    spider=Enemy(data[1]["Name"], 1, data[1]["Hp"], data[1]["Dmg"], 10)
+    slime=Enemy(data[2]["Name"], 2, data[2]["Hp"], data[2]["Dmg"], 15)
+    zombie=Enemy(data[3]["Name"], 3, data[3]["Hp"], data[3]["Dmg"], 20)
+    Golem=Boss(data[4]["Name"], 4, data[4]["Hp"])
+    Lich=Boss(data[5]["Name"], 5, data[5]["Hp"])
+    Dragon=Boss(data[6]["Name"], 6, data[6]["Hp"])
+    King=Boss(data[8]["Name"], 8, data[8]["Hp"]  )
+    Hydra=Boss(data[10]["Name"], 10, data[10]["Hp"] )
