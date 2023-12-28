@@ -1,25 +1,20 @@
 import random
 import json
 import time
+from decimal import Decimal
 
-  
-i=0
 with open("player.json", "r") as pjson:
     data = json.load(pjson)
     player=data[8]
     x=player['BaseHP:']*player['HpMultiplier:']
     hplist=[x]
-with open("data.json", "r") as ejson:
-    edata = json.load(ejson)
-    enemy=edata[i]
-    enemyhplist=[enemy['Hp:']]
 class effects:
     def __init__(self, player, enemy, damage):
         self.player = player
         self.enemy = enemy
         self.damage = damage
     def blockthingy():
-        t_time = random.randint(1, 3)
+        t_time = random.randint(1, 2)
         t1 = time.time()
         while True:
             user_input = input("Enter 'Block': ")
@@ -29,8 +24,38 @@ class effects:
                 return(True)
             if t3 >= t_time:
                 return(False)
-    def burn():
-        if random.randint(0,1) == 0:
-            hplist=hplist-10
+    def shieldthingy():
+        t_time = random.randint(2, 4)
+        t1 = time.time()
+        while True:
+            user_input = input("Enter 'Shield': ")
+            t2 = time.time()
+            t3 = t2 - t1
+            if user_input == "Shield" and t3<=t_time:
+                return(True)
+            if t3 >= t_time:
+                return(False)
+    def protectionthingy():
+        t_time = random.randint(2, 4)
+        t1 = time.time()
+        while True:
+            user_input = input("Enter 'Spell': ")
+            t2 = time.time()
+            t3 = t2 - t1
+            if user_input == "Spell" and t3<=t_time:
+                return(True)
+            if t3 >= t_time:
+                return(False)
+    def freeze():
+        if random.randint(1,3)==1:
+            return(True)
+        else:
+            return(False)
+    def burning():
+        if random.randint(1,2) == 1:
+            return(True)
+        else:
+            return(False)
     def heal(x, y):
-        x=x+y
+        z=Decimal(x)+Decimal(y)
+        return(Decimal(z))
