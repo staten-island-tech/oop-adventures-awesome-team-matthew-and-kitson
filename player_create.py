@@ -12,11 +12,11 @@ with open("player.json", "r") as pjson:
             HP=data[i]['Hp']
             Weapon1=data[i]['Weapon1']
             Moves=data[i]['Moves']
-            if "Weapon2" in data[i]:
-                Weapon2=data[i]['Weapon2']
-                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Weapon2:':Weapon2, 'Moves:': Moves, 'Gold:': 0, "HpMultiplier:":1, "DmgMultiplier:":1}
+            Weapon2=data[i]['Weapon2']
+            if not Weapon2 == "N/A":
+                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Weapon2:':Weapon2, 'Moves:': Moves, 'Gold:': [0], "HpMultiplier:":1, "DmgMultiplier:":1, "Inventory:": [Weapon1, Weapon2], "Helmet:": "N/A", "Chestplate:": "N/A", "Leggings:": "N/A", "Boots:": "N/A"}
             else:
-                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Moves:':Moves, 'Gold:': 0, "HpMultiplier:":1, "DmgMultiplier:":1}
+                PValues={'PName:':PlayerName,'Class:':Pclass,'BaseHP:':HP,'Weapon1:':Weapon1,'Weapon2:':Weapon2, 'Moves:': Moves, 'Gold:': [0], "HpMultiplier:":1, "DmgMultiplier:":1, "Inventory:": [Weapon1], "Helmet:": "N/A", "Chestplate:": "N/A", "Leggings:": "N/A", "Boots:": "N/A"}
             return(PValues)
         def Create2(self, x):
             with open("player.json", "r") as pjson:
