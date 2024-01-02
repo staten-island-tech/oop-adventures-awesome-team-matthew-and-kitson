@@ -85,11 +85,10 @@
         "Class:": "Knight",
         "BaseHP:": 100,
         "Weapon1:": "Sword",
-        "Weapon2:": "Mace",
+        "Weapon2:": "N/A",
         "Moves:": [
             "Sword Attack",
-            "Shield",
-            "Mace Swing"
+            "Shield"
         ],
         "Gold:": [
             0
