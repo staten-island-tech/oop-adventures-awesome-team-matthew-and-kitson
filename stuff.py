@@ -29,7 +29,7 @@ with open("item.json", "r") as ijson:
             self.Price=Price
     LeatherHelmet=Helmet(["Healer", "SpellCaster"], "Leather Helmet", 7, 67)
     PlateHelmet=Helmet(["Knight", "Tank"], "Plated Helmet", 17, 89)
-    ConeHat=Helmet(["Mage", "Necromancer"], "Cone Hat", 13, 54)
+    ConeHat=Helmet(["Mage", "Necromancer", "Healer", "Spellcaster"], "Cone Hat", 13, 54)
     HelmetList=[ConeHat, PlateHelmet, LeatherHelmet]
     class Chestplate(items):
         def __init__(self, Equipable, Name, HP, Price):
