@@ -85,10 +85,11 @@
         "Class:": "Knight",
         "BaseHP:": 100,
         "Weapon1:": "Sword",
-        "Weapon2:": "N/A",
+        "Weapon2:": "Mace",
         "Moves:": [
             "Sword Attack",
-            "Shield"
+            "Shield",
+            "Mace Swing"
         ],
         "Gold:": [
             0
@@ -96,7 +97,8 @@
         "HpMultiplier:": 1,
         "DmgMultiplier:": 1,
         "Inventory:": [
-            "Sword"
+            "Sword",
+            "Mace"
         ],
         "Helmet:": "N/A",
         "Chestplate:": "N/A",
