@@ -45,17 +45,17 @@ class battle():
                     hplist.append(hp)
                     hplist.remove(hplist[0])
                     print(enemy['Name:'], "attacked!", player['PName:'], "has", hp, "HP!")      
-            def EffectCheck(w, z):
+            def EffectCheck(w):
                 if y==w:
-                    if y in player['Moves:'][z]:
+                    if y in player['Moves:']:
                             return(True)
                     else:
                         return(False)
                 else:
                     return(False)       
-            def PlayerAttack(x, w, z):
+            def PlayerAttack(x, w):
                 if y==w:
-                    if y in player['Moves:'][z]:
+                    if y in player['Moves:']:
                         if len(enemyhplist) ==1:
                             enemyhplist.append(enemyhplist[0])
                             hp=enemyhplist[1]
@@ -75,32 +75,32 @@ class battle():
             #All Moves
             class playermoves(moves):
                 def SwordAttack():
-                    PlayerAttack(round(Decimal(25)*Decimal(player['DmgMultiplier:'])), "Sword Attack", 0)
+                    PlayerAttack(round(Decimal(25)*Decimal(player['DmgMultiplier:'])), "Sword Attack")
                 SwordAttack()
                 def MaceSwing():
-                    PlayerAttack(round(Decimal(30)*Decimal(player['DmgMultiplier:'])), "Mace Swing", 0)
+                    PlayerAttack(round(Decimal(30)*Decimal(player['DmgMultiplier:'])), "Mace Swing")
                 MaceSwing()
                 def ShieldBash():
-                    PlayerAttack(round(Decimal(30)*Decimal(player['DmgMultiplier:'])), "Shield Bash", 1)
+                    PlayerAttack(round(Decimal(30)*Decimal(player['DmgMultiplier:'])), "Shield Bash")
                 ShieldBash()
                 def MeteorShower():
-                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Meteor Shower", 0)
+                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Meteor Shower")
                 MeteorShower()
                 def Thunderbolt():
-                    PlayerAttack(round(Decimal(25)*Decimal(player['DmgMultiplier:'])), "Thunderbolt", 1)
+                    PlayerAttack(round(Decimal(25)*Decimal(player['DmgMultiplier:'])), "Thunderbolt")
                 Thunderbolt()
                 def StaffStab():
-                    PlayerAttack(round(Decimal(15)*Decimal(player['DmgMultiplier:'])), "Staff Stab", 1)
+                    PlayerAttack(round(Decimal(15)*Decimal(player['DmgMultiplier:'])), "Staff Stab")
                 StaffStab()
                 def NormalArrow():
-                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Normal Arrow", 0)
+                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Normal Arrow")
                 NormalArrow()
                 def SlingshotFire():
-                    PlayerAttack(round(Decimal(15)*Decimal(player['DmgMultiplier:'])), "Slingshot Fire", 0)
+                    PlayerAttack(round(Decimal(15)*Decimal(player['DmgMultiplier:'])), "Slingshot Fire")
                 SlingshotFire()
             class playereffectmoves(moves):
                 def Shield():
-                    if EffectCheck("Shield", 1)==True:
+                    if EffectCheck("Shield")==True:
                         check=effects.shieldthingy()
                         if check == True:
                             return(True)
@@ -109,7 +109,7 @@ class battle():
                     else:
                         return(False)
                 def Block():
-                    if EffectCheck("Block", 2)==True:
+                    if EffectCheck("Block")==True:
                         check=effects.blockthingy()
                         if check == True:
                             return(True)
@@ -118,8 +118,8 @@ class battle():
                     else:
                         return(False)
                 def Ice_Shard():
-                    PlayerAttack(round(Decimal(25)*Decimal(player['DmgMultiplier:'])), "Ice Shard", 1)
-                    if EffectCheck("Ice Shard", 1)==True:
+                    PlayerAttack(round(Decimal(25)*Decimal(player['DmgMultiplier:'])), "Ice Shard")
+                    if EffectCheck("Ice Shard")==True:
                         check=effects.freeze()
                         if check == True:
                             return(True)
@@ -128,7 +128,7 @@ class battle():
                     else:
                         return(False)
                 def Protection_Spell():
-                    if EffectCheck("Protection Spell", 2)==True:
+                    if EffectCheck("Protection Spell")==True:
                         check=effects.protectionthingy()
                         if check == True:
                             return(True)
@@ -137,13 +137,13 @@ class battle():
                     else:
                         return(False)
                 def Summon():
-                    if EffectCheck("Summon", 0)==True:
+                    if EffectCheck("Summon")==True:
                         return(True)
                     else:
                         return(False)
                 def Fireball():
-                    PlayerAttack(round(Decimal(30)*Decimal(player['DmgMultiplier:'])), "Fireball", 0)
-                    if EffectCheck("Fireball", 0)==True:
+                    PlayerAttack(round(Decimal(30)*Decimal(player['DmgMultiplier:'])), "Fireball")
+                    if EffectCheck("Fireball")==True:
                         check=effects.burning()
                         if check == True:
                             return(True)
@@ -152,15 +152,15 @@ class battle():
                     else:
                         return(False)
                 def Heal(x, y):
-                    if EffectCheck("Heal", 0)==True:
+                    if EffectCheck("Heal")==True:
                         x=effects.heal(x, y)
                         hplist.append(x)
                         hplist.remove(hplist[0])
                         print(player['PName:'], "Healed for", y, "HP!", player['PName:'], "has", x, "HP!")
                 Heal(hplist[0], round(Decimal(15)*Decimal(player['HpMultiplier:'])))
                 def FireArrow():
-                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Fire Arrow", 1)
-                    if EffectCheck("Fire Arrow", 1)==True:
+                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Fire Arrow")
+                    if EffectCheck("Fire Arrow")==True:
                         check=effects.burning()
                         if check == True:
                             return(True)
@@ -169,8 +169,8 @@ class battle():
                     else:
                         return(False)
                 def Ice_Arrow():
-                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Ice Arrow", 2)
-                    if EffectCheck("Ice Arrow", 2)==True:
+                    PlayerAttack(round(Decimal(20)*Decimal(player['DmgMultiplier:'])), "Ice Arrow")
+                    if EffectCheck("Ice Arrow")==True:
                         check=effects.freeze()
                         if check == True:
                             return(True)
@@ -474,3 +474,4 @@ class battle():
         if enemyhplist[1]<0:
             print(player['PName:'], 'Won the Battle!')
             return(True)
+battle.fight(0)
