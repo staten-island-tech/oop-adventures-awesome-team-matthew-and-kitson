@@ -1,0 +1,64 @@
+[
+    {
+        "Name": "Sword",
+        "Moves": [
+            "Sword Attack",
+            "Shield"
+        ]
+    },
+    {
+        "Name": "Mace",
+        "Moves": [
+            "Mace Swing"
+        ]
+    },
+    {
+        "Name": "Shield",
+        "Moves": [
+            "Shield Bash",
+            "Block"
+        ]
+    },
+    {
+        "Name": "Staff",
+        "Moves": [
+            "Meteor Shower",
+            "Ice Shard",
+            "Protection Spell"
+        ]
+    },
+    {
+        "Name": "Necromancer Staff",
+        "Moves": [
+            "Summon"
+        ]
+    },
+    {
+        "Name": "Magic Book",
+        "Moves": [
+            "Fireball",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "Name": "Healer Staff",
+        "Moves": [
+            "Heal",
+            "Staff Stab"
+        ]
+    },
+    {
+        "Name": "Bow",
+        "Moves": [
+            "Normal Arrow",
+            "Fire Arrow",
+            "Ice Arrow"
+        ]
+    },
+    {
+        "Name": "Slinghsot",
+        "Moves": [
+            "Slingshot Fire"
+        ]
+    }
+]
