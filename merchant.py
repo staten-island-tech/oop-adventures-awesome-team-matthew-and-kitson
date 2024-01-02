@@ -3,6 +3,5 @@ class Merchant:
         self.products=products
     def sell(self, item):
         self.products.remove(item)
-        print(f"You have purchased {item}")
-    def welcome():
-        print(f"Welcome to my shop!")
+    def welcome(x):
+        print(f"Welcome to my shop! You can buy items from my catalogue, or sell any sellable item here!")
