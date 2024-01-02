@@ -3,6 +3,7 @@
         "Class": "Knight",
         "Hp": 100,
         "Weapon1": "Sword",
+        "Weapon2": "N/A",
         "Moves": [
             "Sword Attack",
             "Shield"
@@ -11,12 +12,8 @@
     {
         "Class": "Tank",
         "Hp": 150,
-        "Weapon1": [
-            "Mace"
-        ],
-        "Weapon2": [
-            "Shield"
-        ],
+        "Weapon1": "Mace",
+        "Weapon2": "Shield",
         "Moves": [
             "Mace Swing",
             "Shield Bash",
@@ -27,6 +24,7 @@
         "Class": "Mage",
         "Hp": 80,
         "Weapon1": "Staff",
+        "Weapon2": "N/A",
         "Moves": [
             "Meteor Shower",
             "Ice Shard",
@@ -36,9 +34,8 @@
     {
         "Class": "Necromancer",
         "Hp": 85,
-        "Weapon1": [
-            "Necromancer Staff"
-        ],
+        "Weapon1": "Necromancer Staff",
+        "Weapon2": "N/A",
         "Moves": [
             "Summon"
         ]
@@ -47,6 +44,7 @@
         "Class": "Spellcaster",
         "Hp": 73,
         "Weapon1": "Magic Book",
+        "Weapon2": "N/A",
         "Moves": [
             "Fireball",
             "Thunderbolt"
@@ -55,9 +53,8 @@
     {
         "Class": "Healer",
         "Hp": 67,
-        "Weapon1": [
-            "Healer Staff"
-        ],
+        "Weapon1": "Healer Staff",
+        "Weapon2": "N/A",
         "Moves": [
             "Heal",
             "Staff Stab"
@@ -67,6 +64,7 @@
         "Class": "Archer",
         "Hp": 93,
         "Weapon1": "Bow",
+        "Weapon2": "N/A",
         "Moves": [
             "Normal Arrow",
             "Fire Arrow",
@@ -76,25 +74,33 @@
     {
         "Class": "Slinger",
         "Hp": 88,
-        "Weapon1": [
-            "Slinghsot"
-        ],
+        "Weapon1": "Slinghsot",
+        "Weapon2": "N/A",
         "Moves": [
             "Slingshot Fire"
         ]
     },
     {
         "PName:": "Matthew",
-        "Class:": "Archer",
-        "BaseHP:": 93,
-        "Weapon1:": "Bow",
+        "Class:": "Knight",
+        "BaseHP:": 100,
+        "Weapon1:": "Sword",
+        "Weapon2:": "N/A",
         "Moves:": [
-            "Normal Arrow",
-            "Fire Arrow",
-            "Ice Arrow"
+            "Sword Attack",
+            "Shield"
         ],
-        "Gold:": 0,
+        "Gold:": [
+            0
+        ],
         "HpMultiplier:": 1,
-        "DmgMultiplier:": 1
+        "DmgMultiplier:": 1,
+        "Inventory:": [
+            "Sword"
+        ],
+        "Helmet:": "N/A",
+        "Chestplate:": "N/A",
+        "Leggings:": "N/A",
+        "Boots:": "N/A"
     }
 ]
