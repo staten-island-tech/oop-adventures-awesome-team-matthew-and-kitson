@@ -1,18 +1,7 @@
 import random
-import json
 import time
 from decimal import Decimal
-
-with open("player.json", "r") as pjson:
-    data = json.load(pjson)
-    player=data[8]
-    x=player['BaseHP:']*player['HpMultiplier:']
-    hplist=[x]
 class effects:
-    def __init__(self, player, enemy, damage):
-        self.player = player
-        self.enemy = enemy
-        self.damage = damage
     def blockthingy():
         t_time = random.randint(1, 2)
         t1 = time.time()
