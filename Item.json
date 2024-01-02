@@ -5,17 +5,17 @@
         "Price": "67"        
     },
     {
-        "Name": "Platehelm",
+        "Name": "Plated Helmet",
         "Hp": "17",
         "Price": "89"   
     },
     {
-        "Name": "Conehat",
+        "Name": "Cone Hat",
         "Hp": "13",
         "Price": "54" 
     },
     {
-        "Name": "HeavyLeatherChest",
+        "Name": "Heavy Leather Chestplate",
         "Hp": "15",
         "Price": "64" 
     },
@@ -26,98 +26,98 @@
     
     },
     {
-        "Name": "PlateChest",
+        "Name": "Plated Chestplate",
         "Hp": "64",
         "Price": "78" 
     },
     {
-        "Name": "HeavyLeatherlegs",
+        "Name": "Heavy Leather Leggings",
         "Hp": "10",
         "Price": "56" 
     },
     {
-        "Name": "Platelegs",
+        "Name": "Plated Leggings",
         "Hp": "23",
         "Price": "86" 
     },
     {
-        "Name": "trousers",
+        "Name": "Trousers",
         "Hp": "9",
         "Price": "43" 
     },
     {
-        "Name": "Heavyboots",
+        "Name": "Heavy Boots",
         "Hp": "11",
         "Price": "26" 
     },
     {
-        "Name": "Clothboots",
+        "Name": "Cloth Boots",
         "Hp": "5",
         "Price": "12" 
     },
     {
-        "Name": "Plateboots",
+        "Name": "Plated Boots",
         "Hp": "19",
         "Price": "29" 
     },
     {
-        "Name": "trinket",
+        "Name": "Trinket",
         "Price": "19"        
     },
     {
-        "Name": "gold goblet",
+        "Name": "Gold Goblet",
         "Price": "43"
     },
     {
-        "Name": "silver goblet",
+        "Name": "Silver Goblet",
         "Price": "18"
     },
     {
-        "Name": "gold ring",
+        "Name": "Gold Ring",
         "Price": "39"        
     },
     {
-        "Name": "silver ring",
+        "Name": "Silver Ring",
         "Price": "13"
     },
     {
-        "Name": "gold necklace",
+        "Name": "Gold Necklace",
         "Price": "37"
     },    
     {
-        "Name": "silver necklaceace",
+        "Name": "Silver Necklaceace",
         "Price": "23"        
     },
     {
-        "Name": "gold ring",
+        "Name": "Gold Eing",
         "Price": "46"
     },
     {
-        "Name": "silver ring",
+        "Name": "Silver Ring",
         "Price": "25"
     },
     {
-        "Name": "gold band",
+        "Name": "Gold Band",
         "Price": "29"        
     },
     {
-        "Name": "silver band",
+        "Name": "Silver Band",
         "Price": "17"
     },
     {
-        "Name": "gold bangle",
+        "Name": "Gold Bangle",
         "Price": "34"
     },
     {
-        "Name": "silver bangle",
+        "Name": "Silver Bangle",
        "Price": "29"        
     },
     {
-        "Name": "diamond",
+        "Name": "Diamond",
         "Price": "47"
     },
     {
-        "Name": "ruby",
+        "Name": "Ruby",
         "Price": "35"
     }  
 ]
