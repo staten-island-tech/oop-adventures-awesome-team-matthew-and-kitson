@@ -27,8 +27,8 @@ with open("item.json", "r") as ijson:
             self.Name = Name
             self.HP = HP
             self.Price=Price
-    LeatherHelmet=Helmet(["Healer", "SpellCaster"], "Leather Helmet", 7, 67)
-    PlateHelmet=Helmet(["Knight", "Tank"], "Plated Helmet", 17, 89)
+    LeatherHelmet=Helmet(["Healer", "SpellCaster","Mage", "Necromancer", "Archer","Slinger"], "Leather Helmet", 7, 67)
+    PlateHelmet=Helmet(["Knight", "Tank", "Archer","Slinger"], "Plated Helmet", 17, 89)
     ConeHat=Helmet(["Mage", "Necromancer", "Healer", "Spellcaster"], "Cone Hat", 13, 54)
     HelmetList=[ConeHat, PlateHelmet, LeatherHelmet]
     class Chestplate(items):
@@ -37,9 +37,9 @@ with open("item.json", "r") as ijson:
             self.Name = Name
             self.HP = HP
             self.Price=Price
-    LeatherChestplate=Chestplate(["Healer", "SpellCaster"],"Leather Chestplate", .1, 64)
-    MagicRobe=Chestplate(["Mage", "Necromancer"], "Magic Robe", .3, 43)
-    PlateChest=Chestplate(["Knight", "Tank"], "Plated Chestplate", .5, 78)
+    LeatherChestplate=Chestplate(["Healer", "SpellCaster", "Archer","Mage","Slinger"],"Leather Chestplate", .1, 64)
+    MagicRobe=Chestplate(["Mage", "Necromancer","Healer", "SpellCaster"], "Magic Robe", .3, 43)
+    PlateChest=Chestplate(["Knight", "Tank", "Archer","Slinger"], "Plated Chestplate", .5, 78)
     ChestplateList=[PlateChest, MagicRobe, LeatherChestplate]
     class Leggings(items):
         def __init__(self, Equipable, Name, HP, Price):
@@ -47,9 +47,9 @@ with open("item.json", "r") as ijson:
             self.Name = Name
             self.HP = HP
             self.Price=Price
-    Trousers=Leggings(["Mage", "Necromancer"], "Trousers", 8, 43)
-    LeatherLeggings=Leggings(["Healer", "SpellCaster"], "Leather Leggings", 10, 56)
-    PlateLeggings=Leggings(["Knight", "Tank"], "Plated Leggings", 23, 86)
+    Trousers=Leggings(["Mage", "Necromancer", "Archer","Healer", "SpellCaster","Slinger"], "Trousers", 8, 43)
+    LeatherLeggings=Leggings(["Healer", "SpellCaster", "Archer","Slinger"], "Leather Leggings", 10, 56)
+    PlateLeggings=Leggings(["Knight", "Tank", "Archer","Slinger"], "Plated Leggings", 23, 86)
     LeggingsList=[PlateLeggings, LeatherLeggings, Trousers]
     class Boots(items):
         def __init__(self, Equipable, Name, HP, Price):
@@ -57,9 +57,9 @@ with open("item.json", "r") as ijson:
             self.Name = Name
             self.HP = HP
             self.Price=Price
-    LeatherBoots=Boots(["Mage", "Necromancer", "Knight"], "Leather Boots", 5, 12)
-    HeavyBoots=Boots(["Healer", "SpellCaster"], "Heavy Boots", 11, 26)
-    PlateBoots=Boots(["Knight", "Tank"], "Plated Boots", 19, 29)
+    LeatherBoots=Boots(["Mage", "Necromancer", "Knight", "Archer", "Tank","Slinger"], "Leather Boots", 5, 12)
+    HeavyBoots=Boots(["Healer", "SpellCaster", "Archer","Slinger"], "Heavy Boots", 11, 26)
+    PlateBoots=Boots(["Knight", "Tank", "Archer","Slinger"], "Plated Boots", 19, 29)
     BootsList=[PlateBoots, HeavyBoots, LeatherBoots]
 class Enemy():
     def __init__(self, Name, JSON_Num, HP, DMG, EXP, Gold):
