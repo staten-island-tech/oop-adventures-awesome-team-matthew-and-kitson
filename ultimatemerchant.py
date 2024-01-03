@@ -1,4 +1,4 @@
-from merchant import Merchant
+from stuff import Merchant
 import stuff
 import json
 import os
