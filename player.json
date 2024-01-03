@@ -93,11 +93,15 @@
         "Gold:": [
             0
         ],
-        "HpMultiplier:": 1,
+        "HpMultiplier:": 1.0,
         "DmgMultiplier:": 1,
         "Inventory:": [
             "Sword",
-            "Mace"
+            "Mace",
+            "Trousers",
+            "Plated Boots",
+            "Plated Chestplate",
+            "Plated Helmet"
         ],
         "Helmet:": "N/A",
         "Chestplate:": "N/A",
