@@ -298,6 +298,8 @@ class battle():
                     if moveint==2:
                         b.DeathSpell()
                         Poison=False
+                else:
+                    Poison=False
             if enemy.Num==6:
                 if enemyhplist[1]<0 and phase==0:
                     enemyhplist.append(947)
@@ -369,16 +371,14 @@ class battle():
                     phase=phase+1
                 if phase==1:
                     moveint=random.randint(1,3)
+                    Poison=False
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.HydraBeam()
-                            Poison=False
+                            b.HydraBeam()          
                         if moveint==2:
                             b.SkullFire()
-                            Poison=False
                         if moveint==3:
                             b.HydraBite()
-                            Poison=False
                 elif phase==2:
                     moveint=random.randint(1,3)
                     if enemy_attack_check()==True:
@@ -403,6 +403,8 @@ class battle():
                         if moveint==3:
                             b.PoisonFire()
                             Poison=True
+                    else:
+                        Poison=False
             #Effect-Checking
             if playereffectmoves.Summon()==True or summon==1:
                 summon=1
