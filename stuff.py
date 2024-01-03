@@ -63,6 +63,19 @@ with open("player.json", "r") as pjson:
     HeavyBoots=Boots(["Healer", "SpellCaster"], "Heavy Boots", 11, 26)
     PlateBoots=Boots(["Knight", "Tank"], "Plated Boots", 19, 29)
     BootsList=[PlateBoots, HeavyBoots, LeatherBoots]
+class Weapon(items):
+    def __init__(self, Name, Moves):
+        self.Name=Name
+        self.Moves=Moves
+Sword=Weapon("Sword")
+Mace=Weapon("Mace")
+Shield=Weapon("Shield")
+Staff=Weapon("Staff")
+Necromancer_Staff=Weapon("Necromancer Staff")
+Magic_Book=Weapon("Magic_Book")
+Healer_Staff=Weapon("Healer Staff")
+Bow=Weapon("Bow")
+Slingshot=Weapon
 class Enemy():
     def __init__(self, Name, Num, HP, DMG, EXP, Gold):
         self.Name = Name.capitalize()
