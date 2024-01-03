@@ -1,1 +1,2 @@
-from player_create_final import finalcreate
+from player_create_final import check
+check()
