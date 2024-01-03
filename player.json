@@ -22,7 +22,7 @@
     },
     {
         "Class": "Mage",
-        "Hp": 80,
+        "Hp": 75,
         "Weapon1": "Staff",
         "Weapon2": "N/A",
         "Moves": [
@@ -33,7 +33,7 @@
     },
     {
         "Class": "Necromancer",
-        "Hp": 85,
+        "Hp": 100,
         "Weapon1": "Necromancer Staff",
         "Weapon2": "N/A",
         "Moves": [
@@ -42,7 +42,7 @@
     },
     {
         "Class": "Spellcaster",
-        "Hp": 73,
+        "Hp": 90,
         "Weapon1": "Magic Book",
         "Weapon2": "N/A",
         "Moves": [
@@ -52,7 +52,7 @@
     },
     {
         "Class": "Healer",
-        "Hp": 67,
+        "Hp": 120,
         "Weapon1": "Healer Staff",
         "Weapon2": "N/A",
         "Moves": [
@@ -73,7 +73,7 @@
     },
     {
         "Class": "Slinger",
-        "Hp": 88,
+        "Hp": 110,
         "Weapon1": "Slinghsot",
         "Weapon2": "N/A",
         "Moves": [
