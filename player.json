@@ -84,11 +84,11 @@
         "PName:": "Matthew",
         "Class:": "Knight",
         "BaseHP:": 100,
-        "Weapon1:": "Sword",
-        "Weapon2:": "N/A",
+        "Weapon1:": "Mace",
+        "Weapon2:": "Mace",
         "Moves:": [
-            "Sword Attack",
-            "Shield"
+            "Mace Swing",
+            "Mace Swing"
         ],
         "Gold:": [
             0
