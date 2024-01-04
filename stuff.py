@@ -67,15 +67,17 @@ class Weapon(items):
     def __init__(self, Name, Moves):
         self.Name=Name
         self.Moves=Moves
-Sword=Weapon("Sword")
-Mace=Weapon("Mace")
-Shield=Weapon("Shield")
-Staff=Weapon("Staff")
-Necromancer_Staff=Weapon("Necromancer Staff")
-Magic_Book=Weapon("Magic_Book")
-Healer_Staff=Weapon("Healer Staff")
-Bow=Weapon("Bow")
-Slingshot=Weapon
+
+Sword=Weapon("Sword", ["Sword Attack", "Shield"])
+Mace=Weapon("Mace", ["Mace Swing"])
+Shield=Weapon("Shield", ["Shield Bash", "Block"])
+Staff=Weapon("Staff", ["Meteor Shower", "Ice Shard", "Protection Spell"])
+Necromancer_Staff=Weapon("Necromancer Staff", ["Summon"])
+Magic_Book=Weapon("Magic_Book", ["Fireball", "Thunderbolt"])
+Healer_Staff=Weapon("Healer Staff", ["Heal", "Staff Stab"])
+Bow=Weapon("Bow", ["Normal Arrow", "Fire Arrow", "Ice Arrow"])
+Slingshot=Weapon("Slingshot", ["Slingshot Fire"])
+WeaponList=[Sword, Mace, Shield, Staff, Necromancer_Staff, Magic_Book, Healer_Staff, Bow, Slingshot]
 class Enemy():
     def __init__(self, Name, Num, HP, DMG, EXP, Gold):
         self.Name = Name.capitalize()
