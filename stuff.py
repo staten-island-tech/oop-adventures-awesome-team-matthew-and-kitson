@@ -17,11 +17,11 @@ with open("player.json", "r") as pjson:
     Silver_Ring=Moneyitem("Silver Ring", 13)
     Gold_Necklace=Moneyitem("Gold Necklace", 37)
     Silver_Necklace=Moneyitem("Silver Necklace", 23)
-    Gold_Band=Moneyitem("Gold Band", 29)
+    Gold_Band=Moneyitem("Gold Band", 30)
     Silver_Band=Moneyitem("Silver Band", 20)
-    Gold_Bangle=Moneyitem("Gold Bangle", 34)
-    Silver_Bangle=Moneyitem("Silver Bangle", 21)
-    Diamond=Moneyitem("Diamond", 47)
+    Gold_Bangle=Moneyitem("Gold Bangle", 25)
+    Silver_Bangle=Moneyitem("Silver Bangle", 15)
+    Diamond=Moneyitem("Diamond", 50)
     Ruby=Moneyitem("Ruby", 35)
     class Helmet(items):
         def __init__(self, Equipable, Name, HP, Price):
