@@ -150,7 +150,7 @@ class battle():
                         hplist.append(x)
                         hplist.remove(hplist[0])
                         print(stuff.Hero.name, "Healed for", y, "HP!", stuff.Hero.name, "has", x, "HP!")
-                Heal(hplist[0], round(Decimal(15)*Decimal(stuff.Hero.hpmultiplier)))
+                Heal(hplist[0], round(Decimal(20)*Decimal(stuff.Hero.hpmultiplier)))
                 def FireArrow():
                     moves.PlayerAttack(round(Decimal(20)*Decimal(stuff.Hero.damagemultiplier)), "Fire Arrow")
                     if moves.EffectCheck("Fire Arrow")==True:
