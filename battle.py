@@ -452,4 +452,3 @@ class battle():
         if enemyhplist[1]<0:
             print(stuff.Hero.name, 'Won the Battle!')
             return(True)
-battle.fight(stuff.Hydra)
