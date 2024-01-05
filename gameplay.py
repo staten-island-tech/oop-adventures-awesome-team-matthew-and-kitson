@@ -49,4 +49,3 @@ def wave_5():
 def final_wave():
     if wave_5()==True:
         
-ultbattle(stuff.goblin)
