@@ -84,28 +84,25 @@
         "PName:": "Matthew",
         "Class:": "Knight",
         "BaseHP:": 100,
-        "Weapon1:": "Mace",
-        "Weapon2:": "Mace",
+        "Weapon1:": "Sword",
+        "Weapon2:": "N/A",
         "Moves:": [
-            "Mace Swing",
-            "Mace Swing"
+            "Sword Attack",
+            "Shield"
         ],
         "Gold:": [
             0
         ],
-        "HpMultiplier:": 1.0,
-        "DmgMultiplier:": 1,
+        "HpMultiplier:": 1,
+        "DmgMultiplier:": 1.1,
         "Inventory:": [
-            "Sword",
-            "Mace",
-            "Trousers",
-            "Plated Boots",
-            "Plated Chestplate",
-            "Plated Helmet"
+            "Sword"
         ],
         "Helmet:": "N/A",
         "Chestplate:": "N/A",
         "Leggings:": "N/A",
-        "Boots:": "N/A"
+        "Boots:": "N/A",
+        "Level:": 2,
+        "EXP:": 0
     }
 ]
