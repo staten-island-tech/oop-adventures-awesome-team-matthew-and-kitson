@@ -2,6 +2,7 @@ import stuff
 import random
 from moveeffects import effects
 from decimal import Decimal
+import moves
 class battle():
     def fight(enemy):
         hplist=[stuff.Hero.hp]
@@ -25,173 +26,41 @@ class battle():
                 else:
                     print("INVALID MOVE")
             class moves():
-                def __init__(self, enemy, damage):
-                    self.enemy = enemy
-                    self.damage = damage
                 def basicattack():
                     hp=hplist[0]
                     hp=hp-enemy.DMG
                     hplist.append(hp)
                     hplist.remove(hplist[0])
                     print(enemy.Name, "attacked!", stuff.Hero.name, "has", hp, "HP!")      
-                def EffectCheck(w):
-                    if y==w:
-                        if y in stuff.Hero.moves:
-                            return(True)
-                        else:
-                            return(False)
-                    else:
-                        return(False)       
-                def PlayerAttack(x, w):
-                    if y==w:
-                        if y in stuff.Hero.moves:
-                            if len(enemyhplist) ==1:
-                                enemyhplist.append(enemyhplist[0])
-                                hp=enemyhplist[1]
-                            else:
-                                enemyhplist.remove(enemyhplist[0])
-                                hp=enemyhplist[0]
-                            nhp=hp-x 
-                            enemyhplist.append(nhp)
-                            if len(enemyhplist)>2:
-                                enemyhplist.remove(enemyhplist[0])
-                            print(enemy.Name, "took", x, "DMG!", enemy.Name, "has", enemyhplist[1], "HP!") 
                 def BossMoves(dmg, name):
                     hp=hplist[0]-dmg
                     hplist.append(hp)
                     hplist.remove(hplist[0])
                     print(enemy.Name, "used", name, "!", stuff.Hero.name, "has", hp, "HP!")
             #All Moves
-            class playermoves(moves):
-                def __init__(self, damage):
-                    self.enemy=enemy
-                    self.damage=damage
-                def SwordAttack():
-                    moves.PlayerAttack(round(Decimal(25)*Decimal(stuff.Hero.damagemultiplier)), "Sword Attack")
-                SwordAttack()
-                def MaceSwing():
-                    moves.PlayerAttack(round(Decimal(30)*Decimal(stuff.Hero.damagemultiplier)), "Mace Swing")
-                MaceSwing()
-                def ShieldBash():
-                    moves.PlayerAttack(round(Decimal(30)*Decimal(stuff.Hero.damagemultiplier)), "Shield Bash")
-                ShieldBash()
-                def MeteorShower():
-                    moves.PlayerAttack(round(Decimal(20)*Decimal(stuff.Hero.damagemultiplier)), "Meteor Shower")
-                MeteorShower()
-                def Thunderbolt():
-                    moves.PlayerAttack(round(Decimal(25)*Decimal(stuff.Hero.damagemultiplier)), "Thunderbolt")
-                Thunderbolt()
-                def StaffStab():
-                    moves.PlayerAttack(round(Decimal(15)*Decimal(stuff.Hero.damagemultiplier)), "Staff Stab")
-                StaffStab()
-                def NormalArrow():
-                    moves.PlayerAttack(round(Decimal(20)*Decimal(stuff.Hero.damagemultiplier)), "Normal Arrow")
-                NormalArrow()
-                def SlingshotFire():
-                    moves.PlayerAttack(round(Decimal(15)*Decimal(stuff.Hero.damagemultiplier)), "Slingshot Fire")
-                SlingshotFire()
-            class playereffectmoves(moves):
-                def Shield():
-                    if moves.EffectCheck("Shield")==True:
-                        check=effects.shieldthingy()
-                        if check == True:
-                            return(True)
-                        else:
-                            print("Failed to Shield!")
-                    else:
-                        return(False)
-                def Block():
-                    if moves.EffectCheck("Block")==True:
-                        check=effects.blockthingy()
-                        if check == True:
-                            return(True)
-                        else:
-                            print("Failed to Block!")
-                    else:
-                        return(False)
-                def Ice_Shard():
-                    moves.PlayerAttack(round(Decimal(25)*Decimal(stuff.Hero.damagemultiplier)), "Ice Shard")
-                    if moves.EffectCheck("Ice Shard")==True:
-                        check=effects.freeze()
-                        if check == True:
-                            return(True)
-                        else:
-                            print("Failed to Freeze!")
-                    else:
-                        return(False)
-                def Protection_Spell():
-                    if moves.EffectCheck("Protection Spell")==True:
-                        check=effects.protectionthingy()
-                        if check == True:
-                            return(True)
-                        else:
-                            print("Failed to Protect!")
-                    else:
-                        return(False)
-                def Summon():
-                    if moves.EffectCheck("Summon")==True:
-                        return(True)
-                    else:
-                        return(False)
-                def Fireball():
-                    moves.PlayerAttack(round(Decimal(30)*Decimal(stuff.Hero.damagemultiplier)), "Fireball")
-                    if moves.EffectCheck("Fireball")==True:
-                        check=effects.burning()
-                        if check == True:
-                            return(True)
-                        else:
-                            print("Failed to Burn!")
-                    else:
-                        return(False)
-                def Heal(x, y):
-                    if moves.EffectCheck("Heal")==True:
-                        x=effects.heal(x, y)
-                        hplist.append(x)
-                        hplist.remove(hplist[0])
-                        print(stuff.Hero.name, "Healed for", y, "HP!", stuff.Hero.name, "has", x, "HP!")
-                Heal(hplist[0], round(Decimal(20)*Decimal(stuff.Hero.hpmultiplier)))
-                def FireArrow():
-                    moves.PlayerAttack(round(Decimal(20)*Decimal(stuff.Hero.damagemultiplier)), "Fire Arrow")
-                    if moves.EffectCheck("Fire Arrow")==True:
-                        check=effects.burning()
-                        if check == True:
-                            return(True)
-                        else:
-                            print("Failed to Burn!")
-                    else:
-                        return(False)
-                def Ice_Arrow():
-                    moves.PlayerAttack(round(Decimal(20)*Decimal(stuff.Hero.damagemultiplier)), "Ice Arrow")
-                    if moves.EffectCheck("Ice Arrow")==True:
-                        check=effects.freeze()
-                        if check == True:
-                            return(True)
-                        else:
-                            print("Failed to Freeze!")
-                    else:
-                        return(False)
-                shield=Shield()
-                blocked=Block()
-                freeze=Ice_Shard() or Ice_Arrow()
-                protect=Protection_Spell()
-                summmoning=Summon()
-                if y=="Fireball" or "Fire Arrow":
-                    burn=Fireball() or FireArrow()
+            moves.pmoves.PlayerAttack(y, enemyhplist, enemy)
+            moves.pmoves.Heal(y, hplist[0], round(Decimal(20)*Decimal(stuff.Hero.hpmultiplier)), hplist)
+            shield=moves.pmoves.Shield(y)
+            blocked=moves.pmoves.Block(y)
+            freeze=moves.pmoves.Ice_Shard(y) or moves.pmoves.Ice_Arrow(y)
+            protect=moves.pmoves.Protection_Spell(y)
+            summmoning=moves.pmoves.Summon(y)
+            if y=="Fireball" or "Fire Arrow":
+                burn=moves.pmoves.Fireball(y) or moves.pmoves.FireArrow(y)
             if not enemy.Num==6 and not enemy.Num==8 and not enemy.Num==10:
                 if enemyhplist[1]<0:
                     break
             def enemy_attack_check():
-                e=playereffectmoves
-                if e.shield==True:
+                if shield==True:
                     print(enemy.Name, "'s Attack was Shielded!")
                     return(False)
-                elif e.blocked==True:
+                elif blocked==True:
                     print(enemy.Name, "'s Attack was Blocked!")
                     return(False)
-                elif e.freeze==True:
+                elif freeze==True:
                     print(enemy.Name, "is Frozen!")
                     return(False)
-                elif e.protect==True:
+                elif protect==True:
                     print(enemy.Name, "'s Attack was Protected!")
                     return(False)
                 else:
@@ -405,7 +274,7 @@ class battle():
                     else:
                         Poison=False
             #Effect-Checking
-            if playereffectmoves.Summon()==True or summon>0:
+            if summmoning==True or summon>0:
                 summon+1
                 if len(enemyhplist)==1:
                     enemyhplist.append(enemyhplist[0])
@@ -419,7 +288,7 @@ class battle():
                     enemyhplist.remove(enemyhplist[0])
                 print("Zombies attacked", enemy.Name, "!", enemy.Name, "took", round(Decimal(30)*Decimal(stuff.Hero.damagemultiplier)), "DMG!", enemy.Name, "has", enemyhplist[1], "HP!")
             if y=="Fireball" or "Fire Arrow":
-                if playereffectmoves.burn==True and burner==0:
+                if burn==True and burner==0:
                     burner=burner+3
             if enemy.Num==10 or enemy.Num==5:
                 if Poison==True:
@@ -451,3 +320,4 @@ class battle():
         if enemyhplist[1]<0:
             print(stuff.Hero.name, 'Won the Battle!')
             return(True)
+battle.fight(stuff.goblin)
