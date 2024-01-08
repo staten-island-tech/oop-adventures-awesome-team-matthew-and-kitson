@@ -1,5 +1,4 @@
 import stuff
-import json
 import random
 from moveeffects import effects
 from decimal import Decimal
@@ -406,8 +405,8 @@ class battle():
                     else:
                         Poison=False
             #Effect-Checking
-            if playereffectmoves.Summon()==True or summon==1:
-                summon=1
+            if playereffectmoves.Summon()==True or summon>0:
+                summon+1
                 if len(enemyhplist)==1:
                     enemyhplist.append(enemyhplist[0])
                     hp=enemyhplist[1]
