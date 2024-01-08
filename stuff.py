@@ -90,11 +90,8 @@ class Enemy():
         self.Gold=Gold
 class Boss(Enemy):
     def __init__(self, Name, Num, HP, EXP, Gold):
-        super().__init__(Name, Name)
-        super().__init__(Num, Num)
-        super().__init__(HP, HP)
-        super().__init__(EXP, EXP)
-        super().__init__(Gold, Gold)
+        super().__init__(Name, Name, Num, HP, EXP, Gold)
+       
 goblin=Enemy("Goblin", 0, 32, 12, 5, 1)
 spider=Enemy("Spider", 1, 24, 16, 10, 2)
 slime=Enemy("Slime", 2, 12, 5, 15, 2)
