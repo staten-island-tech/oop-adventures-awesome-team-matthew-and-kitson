@@ -54,23 +54,40 @@ def ultbattle(x):
             pjson.write(json_string) 
         os.remove("player.json")
         os.rename(new_file, "player.json") 
+def loss():
+    print("You have lost. You need to restart this wave.")
+    return(False)
 def wave_1():
     print("Wave 1 started!")
-    ultbattle(stuff.goblin)
-    menu()
-    ultbattle(stuff.spider)
-    menu()
-    ultbattle(stuff.slime)
-    menu()
-    ultbattle(stuff.zombie)
-    menu()
-    print("(This is a merchant. You can sell sellable items here or buy from the merchants catalog.)")
-    ultmerchant.buyingselling([stuff.LeatherBoots, stuff.LeatherHelmet, stuff.Mace])
+    if ultbattle(stuff.goblin)==True:
+        menu()
+        if ultbattle(stuff.spider)==True:
+            menu()
+            if ultbattle(stuff.slime)==True:
+                menu()
+                if ultbattle(stuff.zombie)==True:
+                    menu()
+                    print("(This is a merchant. You can sell sellable items here or buy from the merchants catalog.)")
+                    ultmerchant.buyingselling([stuff.LeatherBoots, stuff.LeatherHelmet, stuff.Mace])
+                    menu()
+                    return(True)
+                else:
+                    return(loss())
+            else:
+                return(loss())
+        else:
+            return(loss())
+    else:
+        return(loss())
 def wave_2():
     if wave_1()==True:
         print("Wave 2 started!")
-        ultbattle(stuff.zombie)
-        menu()
+        if ultbattle(stuff.zombie)==True:
+            menu()
+        else:
+            loss()
+    else:
+        print("You must complete wave 1 to access this wave.")
 def wave_3():
     if wave_2()==True:
         print("Wave 3 started!")
