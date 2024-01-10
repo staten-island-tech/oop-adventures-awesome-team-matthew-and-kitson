@@ -120,6 +120,7 @@ class moves():
         self.name = name
         self.damage = damage
 SwordAttack=moves("Sword Attack", round(Decimal(25)*Decimal(Hero.damagemultiplier)))
+print(SwordAttack.damage)
 Shield=moves("Shield", 0)
 MaceSwing=moves("Mace Swing", round(Decimal(30)*Decimal(Hero.damagemultiplier)))
 ShieldBash=moves("Shield Bash", round(Decimal(30)*Decimal(Hero.damagemultiplier)))
@@ -164,5 +165,4 @@ PoisonFire=moves("Poison Fire", 50)
 FinalBlast=moves("Final Blast", 100)
 Regenerate=moves("Regenerate", 0)
 OneHeadAttack=moves("One Head Attack", 120)
-Regenerate=moves("Regenerate", 0)
 LastEffort=moves("Last Effort", 150)
