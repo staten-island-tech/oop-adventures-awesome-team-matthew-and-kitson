@@ -1,8 +1,7 @@
 import stuff
 import random
-from moveeffects import effects
 from decimal import Decimal
-import moves
+from moves import pmoves
 class battle():
     def fight(enemy):
         hplist=[stuff.Hero.hp]
@@ -24,29 +23,16 @@ class battle():
                 if y in stuff.Hero.moves:
                     movecheck=False
                 else:
-                    print("INVALID MOVE")
-            class moves():
-                def basicattack():
-                    hp=hplist[0]
-                    hp=hp-enemy.DMG
-                    hplist.append(hp)
-                    hplist.remove(hplist[0])
-                    print(enemy.Name, "attacked!", stuff.Hero.name, "has", hp, "HP!")      
-                def BossMoves(dmg, name):
-                    hp=hplist[0]-dmg
-                    hplist.append(hp)
-                    hplist.remove(hplist[0])
-                    print(enemy.Name, "used", name, "!", stuff.Hero.name, "has", hp, "HP!")
-            #All Moves
-            moves.pmoves.PlayerAttack(y, enemyhplist, enemy)
-            moves.pmoves.Heal(y, hplist[0], round(Decimal(20)*Decimal(stuff.Hero.hpmultiplier)), hplist)
-            shield=moves.pmoves.Shield(y)
-            blocked=moves.pmoves.Block(y)
-            freeze=moves.pmoves.Ice_Shard(y) or moves.pmoves.Ice_Arrow(y)
-            protect=moves.pmoves.Protection_Spell(y)
-            summmoning=moves.pmoves.Summon(y)
+                    print("INVALID MOVE") 
+            pmoves.PlayerAttack(y, enemyhplist, enemy)
+            pmoves.Heal(y, hplist[0], round(Decimal(20)*Decimal(stuff.Hero.hpmultiplier)), hplist)
+            shield=pmoves.Shield(y)
+            blocked=pmoves.Block(y)
+            freeze=pmoves.Ice_Shard(y) or pmoves.Ice_Arrow(y)
+            protect=pmoves.Protection_Spell(y)
+            summmoning=pmoves.Summon(y)
             if y=="Fireball" or "Fire Arrow":
-                burn=moves.pmoves.Fireball(y) or moves.pmoves.FireArrow(y)
+                burn=pmoves.Fireball(y) or pmoves.FireArrow(y)
             if not enemy.Num==6 and not enemy.Num==8 and not enemy.Num==10:
                 if enemyhplist[1]<0:
                     break
@@ -65,106 +51,36 @@ class battle():
                     return(False)
                 else:
                     return(True)
-            #basic-enemy
             if enemy.Num<4:
-                moves.basicattack()
-            #bosses
-            class bossmoves(moves):
-                def GolemSlam():
-                    moves.BossMoves(55, "Golem Slam")
-                def BoulderThrow():
-                    moves.BossMoves(45, "Boulder Throw")
-                def GolemPunch():
-                    moves.BossMoves(50, "Golem Punch")
-                def Roll():
-                    moves.BossMoves(40, "Roll") 
-                def Poisoning():
-                    moves.BossMoves(0, "Poisoning")
-                def DeathSpell():
-                    moves.BossMoves(60, "Death Spell")
-                def FireBreath():
-                    moves.BossMoves(50, "Fire Breath")
-                def ClawSlash():
-                    moves.BossMoves(45, "Claw Slash")
-                def TailSwing():
-                    moves.BossMoves(40, "Tail Swing")
-                def Fly():
-                    moves.BossMoves(35, "Fly")
-                def BlueFireBreath():
-                    moves.BossMoves(60, "Blue Fire Breath")
-                def Bite():
-                    moves.BossMoves(50, "Bite")
-                def Slam():
-                    moves.BossMoves(55, "Slam")
-                def SwordAttack():
-                    moves.BossMoves(50, "Sword Attack")
-                def SwordSlam():
-                    moves.BossMoves(55, "Sword Slam")
-                def CrownThrow():
-                    moves.BossMoves(45, "Crown Throw")
-                def SwordSlash():
-                    moves.BossMoves(60, "Sword Slash")
-                def JewelBash():
-                    moves.BossMoves(70, "Jewel Bash")
-                def KingSlam():
-                    moves.BossMoves(65, "King Slam")
-                def HydraBlast():
-                    moves.BossMoves(65, "Hydra Blast")
-                def TripleAttack():
-                    moves.BossMoves(60, "Triple Attack")
-                def HydraBite():
-                    moves.BossMoves(50, "Hydra Bite")
-                def HydraBeam():
-                    moves.BossMoves(85, "Hydra Beam")
-                def SkullFire():
-                    moves.BossMoves(80, "Skull Fire")
-                def PoisonFire():
-                    moves.BossMoves(50, "Poison Fire")
-                def FinalBlast():
-                    moves.BossMoves(100, "Final Blast")
-                def Regenerate():
-                    if enemyhplist[1]+enemyhplist[0]//3>829:
-                        enemyhplist.append(829)
-                        enemyhplist.remove(enemyhplist[0])
-                    else:
-                        enemyhplist.append(effects.heal(enemyhplist[1], enemyhplist[0]//3))
-                        enemyhplist.remove(enemyhplist[0])
-                    print(enemy.Name, "used regenerate and healed", enemyhplist[0]-enemyhplist[1], "HP!")
-                    enemyhplist.remove(enemyhplist[0])
-                def OneHeadAttack():
-                    moves.BossMoves(120, "One Head Attack")
-                def LastEffort():
-                    moves.BossMoves(150, "Last Effort")
-            #boss-phase-hp-check
+                if enemy_attack_check()==True:
+                    pmoves.basicattack(hplist, enemy)
             if enemy.Num==6 or enemy.Num==8 and phase==1:
                 if enemyhplist[1]<0:
                     break
             if enemy.Num==10 and phase==2:
                 if enemyhplist[1]<0:
-                    bossmoves.LastEffort() #uses last effort when going to die
+                    pmoves.BossMoves("Last Effort", hplist)
                     break
-            #Mini/Final-Boss-Move-Selection
-            b=bossmoves
             global Poison
             if enemy.Num==4:
                 moveint=random.randint(1,4)
                 if enemy_attack_check()==True:
                     if moveint==1:
-                        b.GolemSlam()
+                        pmoves.BossMoves("Golem Slam", hplist)
                     if moveint==2:
-                        b.BoulderThrow()
+                        pmoves.BossMoves("Boulder Throw", hplist)
                     if moveint==3:
-                        b.GolemPunch()
+                        pmoves.BossMoves("Golem Punch", hplist)
                     if moveint==4:
-                        b.Roll()
+                        pmoves.BossMoves("Roll", hplist)
             if enemy.Num==5:
                 moveint=random.randint(1,2)
                 if enemy_attack_check()==True:
                     if moveint==1:
-                        b.Poisoning()
+                        pmoves.BossMoves("Poisoning", hplist)
                         Poison=True
                     if moveint==2:
-                        b.DeathSpell()
+                        pmoves.BossMoves("Death Spell", hplist)
                         Poison=False
                 else:
                     Poison=False
@@ -180,22 +96,22 @@ class battle():
                     moveint=random.randint(1,3)
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.BlueFireBreath()
+                            pmoves.BossMoves("Blue Fire Breath", hplist)
                         if moveint==2:
-                            b.Bite()
+                            pmoves.BossMoves("Bite", hplist)
                         if moveint==3:
-                            b.Slam()
+                            pmoves.BossMoves("Slam", hplist)
                 else:
                     moveint=random.randint(1,4)
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.FireBreath()
+                            pmoves.BossMoves("Fire Breath", hplist)
                         if moveint==2:
-                            b.ClawSlash()
+                            pmoves.BossMoves("Claw Slash", hplist)
                         if moveint==3:
-                            b.TailSwing()
+                            pmoves.BossMoves("Tail Swing", hplist)
                         if moveint==4:
-                            b.Fly()
+                            pmoves.BossMoves("Fly", hplist)
             if enemy.Num==8:
                 if enemyhplist[1]<0 and phase==0:
                     enemyhplist.append(552)
@@ -208,20 +124,20 @@ class battle():
                     moveint=random.randint(1,3)
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.SwordSlam()
+                            pmoves.BossMoves("Sword Slash", hplist)
                         if moveint==2:
-                            b.JewelBash()
+                            pmoves.BossMoves("Jewel Bash", hplist)
                         if moveint==3:
-                            b.KingSlam()
+                            pmoves.BossMoves("King Slam", hplist)
                 else:
                     moveint=random.randint(1,3)
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.SwordAttack()
+                            pmoves.BossMoves("Sword Attack", hplist)
                         if moveint==2:
-                            b.SwordSlam()
+                            pmoves.BossMoves("Sword Slam", hplist)
                         if moveint==3:
-                            b.CrownThrow()
+                            pmoves.BossMoves("Crown Throw", hplist)
             if enemy.Num==10:
                 if enemyhplist[1]<0 and phase==0:
                     enemyhplist.append(623)
@@ -242,38 +158,37 @@ class battle():
                     Poison=False
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.HydraBeam()          
+                            pmoves.BossMoves("Hydra Beam", hplist)        
                         if moveint==2:
-                            b.SkullFire()
+                            pmoves.BossMoves("Skull Fire", hplist)
                         if moveint==3:
-                            b.HydraBite()
+                            pmoves.BossMoves("Hydra Bite", hplist)
                 elif phase==2:
                     moveint=random.randint(1,3)
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.FinalBlast()
+                            pmoves.BossMoves("Final Blast", hplist)
                             Poison=False                        
                         if moveint==2:
-                            b.Regenerate()
+                            pmoves.Regenerate(enemyhplist, enemy)
                             Poison=False
                         if moveint==3:
-                            b.OneHeadAttack()
+                            pmoves.BossMoves("One Head Attack", hplist)
                             Poison=False
                 else:
                     moveint=random.randint(1,3)
                     if enemy_attack_check()==True:
                         if moveint==1:
-                            b.HydraBlast()
+                            pmoves.BossMoves("Hydra Blast", hplist)
                             Poison=False
                         if moveint==2:
-                            b.TripleAttack()
+                            pmoves.BossMoves("Triple Attack", hplist)
                             Poison=False
                         if moveint==3:
-                            b.PoisonFire()
+                            pmoves.BossMoves("Poison Fire", hplist)
                             Poison=True
                     else:
                         Poison=False
-            #Effect-Checking
             if summmoning==True or summon>0:
                 summon+1
                 if len(enemyhplist)==1:
