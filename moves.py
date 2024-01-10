@@ -1,5 +1,6 @@
 import stuff
 from moveeffects import effects
+from decimal import Decimal
 class pmoves():
     def basicattack(x,y):
         hp=x[0]
@@ -7,13 +8,23 @@ class pmoves():
         x.append(hp)
         x.remove(x[0])
         print(y.Name, "attacked!", stuff.Hero.name, "has", hp, "HP!")      
-    def BossMoves(x, y, dmg, name):
-        name=
-        dmg=
+    def BossMoves(x, y):
+        moveslist=[stuff.GolemSlam, stuff.BoulderThrow, stuff.GolemPunch, stuff.Roll, stuff.Poisoning, stuff.DeathSpell, stuff.FireBreath, stuff.ClawSlash, stuff.TailSwing, stuff.Fly, stuff.BlueFireBreath, stuff.Bite, stuff.Slam, stuff.SwordAttack, stuff.SwordSlam, stuff.CrownThrow, stuff.SwordSlash, stuff.JewelBash, stuff.KingSlam, stuff.HydraBlast, stuff.TripleAttack, stuff.HydraBite, stuff.HydraBeam, stuff.SkullFire, stuff.PoisonFire, stuff.FinalBlast, stuff.Regenerate, stuff.OneHeadAttack, stuff.LastEffort]
+        for i in range(len(moveslist)):
+            if x==moveslist[i]:
+                move=moveslist[i]
+        name=move.name
+        dmg=move.damage
         hp=x[0]-dmg
+        y.append(hp)
+        y.remove(y[0])
+        print(move.name, "used", name, "!", stuff.Hero.name, "has", hp, "HP!")
+    def basicattack(x, y):
+        hp=x[0]
+        hp=hp-y.DMG
         x.append(hp)
         x.remove(x[0])
-        print(y.Name, "used", name, "!", stuff.Hero.name, "has", hp, "HP!")
+        print(y.Name, "attacked!", stuff.Hero.name, "has", hp, "HP!")     
     def EffectCheck(y, w):
         if y==w:
             if y in stuff.Hero.moves:
@@ -26,7 +37,8 @@ class pmoves():
         moveslist=[stuff.SwordAttack, stuff.MaceSwing, stuff.ShieldBash, stuff.MeteorShower, stuff.IceShard, stuff.Fireball, stuff.Thunderbolt, stuff.StaffStab, stuff.NormalArrow, stuff.FireArrow, stuff.IceArrow, stuff.SlingshotFire]
         for i in range(len(moveslist)):
             if y==moveslist[i].name:
-                x=moveslist[i].damage
+                damage=moveslist[i].damage
+                print(damage)
                 if y in stuff.Hero.moves:
                     if len(w)==1:
                         w.append(w[0])
@@ -34,11 +46,19 @@ class pmoves():
                     else:
                         w.remove(w[0])
                         hp=w[0]
-                    nhp=hp-x 
+                    nhp=hp-damage 
                     w.append(nhp)
                     if len(w)>2:
                         w.remove(w[0])
-                    print(z.Name, "took", x, "DMG!", z.Name, "has", w[1], "HP!") 
+                    print(z.Name, "took", damage, "DMG!", z.Name, "has", w[1], "HP!") 
+    def Regenerate(x, y):
+        if x[1]+x[0]//3>829:
+            x.append(829)
+            x.remove(x[0])
+        else:
+            x.append(effects.heal(x[1], x[0]//3))
+            x.remove(x[0])
+        print(y.Name, "used regenerate and healed", x[0]-x[1], "HP!")
     def Shield(s):
         if pmoves.EffectCheck(s, "Shield")==True:
             check=effects.shieldthingy()
