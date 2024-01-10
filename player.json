@@ -93,7 +93,7 @@
         "Gold:": [
             0
         ],
-        "HpMultiplier:": 1,
+        "HpMultiplier:": 1.1,
         "DmgMultiplier:": 1.1,
         "Inventory:": [
             "Sword"
