@@ -1,6 +1,5 @@
 import stuff
 import random
-from decimal import Decimal
 from moves import pmoves
 class battle():
     def fight(enemy):
@@ -25,7 +24,7 @@ class battle():
                 else:
                     print("INVALID MOVE") 
             pmoves.PlayerAttack(y, enemyhplist, enemy)
-            pmoves.Heal(y, hplist[0], round(Decimal(20)*Decimal(stuff.Hero.hpmultiplier)), hplist)
+            pmoves.Heal(y, hplist[0], round(float(20)*float(stuff.Hero.hpmultiplier)), hplist)
             shield=pmoves.Shield(y)
             blocked=pmoves.Block(y)
             freeze=pmoves.Ice_Shard(y) or pmoves.Ice_Arrow(y)
@@ -197,11 +196,11 @@ class battle():
                 else:
                     enemyhplist.remove(enemyhplist[0])
                     hp=enemyhplist[0]
-                nhp=hp-round(Decimal(30)*Decimal(stuff.Hero.damagemultiplier))
+                nhp=hp-round(float(30)*float(stuff.Hero.damagemultiplier))
                 enemyhplist.append(nhp)
                 if len(enemyhplist)>2:
                     enemyhplist.remove(enemyhplist[0])
-                print("Zombies attacked", enemy.Name, "!", enemy.Name, "took", round(Decimal(30)*Decimal(stuff.Hero.damagemultiplier)), "DMG!", enemy.Name, "has", enemyhplist[1], "HP!")
+                print("Zombies attacked", enemy.Name, "!", enemy.Name, "took", round(float(30)*float(stuff.Hero.damagemultiplier)), "DMG!", enemy.Name, "has", enemyhplist[1], "HP!")
             if y=="Fireball" or "Fire Arrow":
                 if burn==True and burner==0:
                     burner=burner+3
@@ -235,4 +234,4 @@ class battle():
         if enemyhplist[1]<0:
             print(stuff.Hero.name, 'Won the Battle!')
             return(True)
-battle.fight(stuff.goblin)
+battle.fight(stuff.Dragon)
