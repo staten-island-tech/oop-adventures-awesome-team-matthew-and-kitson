@@ -1,6 +1,5 @@
 import stuff
 from moveeffects import effects
-from decimal import Decimal
 class pmoves():
     def basicattack(x,y):
         hp=x[0]
@@ -9,16 +8,16 @@ class pmoves():
         x.remove(x[0])
         print(y.Name, "attacked!", stuff.Hero.name, "has", hp, "HP!")      
     def BossMoves(x, y):
-        moveslist=[stuff.GolemSlam, stuff.BoulderThrow, stuff.GolemPunch, stuff.Roll, stuff.Poisoning, stuff.DeathSpell, stuff.FireBreath, stuff.ClawSlash, stuff.TailSwing, stuff.Fly, stuff.BlueFireBreath, stuff.Bite, stuff.Slam, stuff.SwordAttack, stuff.SwordSlam, stuff.CrownThrow, stuff.SwordSlash, stuff.JewelBash, stuff.KingSlam, stuff.HydraBlast, stuff.TripleAttack, stuff.HydraBite, stuff.HydraBeam, stuff.SkullFire, stuff.PoisonFire, stuff.FinalBlast, stuff.Regenerate, stuff.OneHeadAttack, stuff.LastEffort]
+        moveslist=[stuff.GolemSlam, stuff.BoulderThrow, stuff.GolemPunch, stuff.Roll, stuff.Poisoning, stuff.DeathSpell, stuff.FireBreath, stuff.ClawSlash, stuff.TailSwing, stuff.Fly, stuff.BlueFireBreath, stuff.Bite, stuff.Slam, stuff.SwordAttackBoss, stuff.SwordSlam, stuff.CrownThrow, stuff.SwordSlash, stuff.JewelBash, stuff.KingSlam, stuff.HydraBlast, stuff.TripleAttack, stuff.HydraBite, stuff.HydraBeam, stuff.SkullFire, stuff.PoisonFire, stuff.FinalBlast, stuff.Regenerate, stuff.OneHeadAttack, stuff.LastEffort]
         for i in range(len(moveslist)):
             if x==moveslist[i]:
                 move=moveslist[i]
-        name=move.name
-        dmg=move.damage
-        hp=x[0]-dmg
-        y.append(hp)
-        y.remove(y[0])
-        print(move.name, "used", name, "!", stuff.Hero.name, "has", hp, "HP!")
+                name=move.name
+                dmg=move.damage
+                hp=x[0]-dmg
+                y.append(hp)
+                y.remove(y[0])
+                print(move.name, "used", name, "!", stuff.Hero.name, "has", hp, "HP!")
     def basicattack(x, y):
         hp=x[0]
         hp=hp-y.DMG
@@ -38,7 +37,6 @@ class pmoves():
         for i in range(len(moveslist)):
             if y==moveslist[i].name:
                 damage=moveslist[i].damage
-                print(damage)
                 if y in stuff.Hero.moves:
                     if len(w)==1:
                         w.append(w[0])
