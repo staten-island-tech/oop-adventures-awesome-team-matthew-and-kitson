@@ -1,13 +1,11 @@
 import json
-from decimal import Decimal
 class items():
     def __init__(self, Name, Price):
         self.Name = Name
         self.Price = Price
 class Moneyitem(items):
     def __init__(self, Name, Price):
-        super().__init__(Name, Name)
-        super().__init__(Price, Price)
+        super().__init__(Name, Price)
 with open("player.json", "r") as pjson:
     data = json.load(pjson)
     player=data[8]
@@ -27,9 +25,8 @@ with open("player.json", "r") as pjson:
     class Helmet(items):
         def __init__(self, Equipable, Name, HP, Price):
             self.Equipable=Equipable
-            super().__init__(Name, Name)
+            super().__init__(Name, Price)
             self.HP = HP
-            super().__init__(Price, Price)
     LeatherHelmet=Helmet(["Healer", "SpellCaster"], "Leather Helmet", 7, 67)
     PlateHelmet=Helmet(["Knight", "Tank"], "Plated Helmet", 17, 89)
     ConeHat=Helmet(["Mage", "Necromancer", "Healer", "Spellcaster"], "Cone Hat", 13, 54)
@@ -37,9 +34,8 @@ with open("player.json", "r") as pjson:
     class Chestplate(items):
         def __init__(self, Equipable, Name, HP, Price):
             self.Equipable=Equipable
-            super().__init__(Name, Name)
+            super().__init__(Name, Price)
             self.HP = HP
-            super().__init__(Price, Price)
     LeatherChestplate=Chestplate(["Healer", "SpellCaster"],"Leather Chestplate", .1, 64)
     MagicRobe=Chestplate(["Mage", "Necromancer"], "Magic Robe", .3, 43)
     PlateChest=Chestplate(["Knight", "Tank"], "Plated Chestplate", .5, 78)
@@ -47,9 +43,8 @@ with open("player.json", "r") as pjson:
     class Leggings(items):
         def __init__(self, Equipable, Name, HP, Price):
             self.Equipable=Equipable
-            super().__init__(Name, Name)
+            super().__init__(Name, Price)
             self.HP = HP
-            super().__init__(Price, Price)
     Trousers=Leggings(["Mage", "Necromancer", "Knight"], "Trousers", 8, 43)
     LeatherLeggings=Leggings(["Healer", "SpellCaster"], "Leather Leggings", 10, 56)
     PlateLeggings=Leggings(["Knight", "Tank"], "Plated Leggings", 23, 86)
@@ -57,18 +52,16 @@ with open("player.json", "r") as pjson:
     class Boots(items):
         def __init__(self, Equipable, Name, HP, Price):
             self.Equipable=Equipable
-            super().__init__(Name, Name)
+            super().__init__(Name, Price)
             self.HP = HP
-            super().__init__(Price, Price)
     LeatherBoots=Boots(["Mage", "Necromancer", "Knight"], "Leather Boots", 5, 12)
     HeavyBoots=Boots(["Healer", "SpellCaster"], "Heavy Boots", 11, 26)
     PlateBoots=Boots(["Knight", "Tank"], "Plated Boots", 19, 29)
     BootsList=[PlateBoots, HeavyBoots, LeatherBoots]
 class Weapon(items):
     def __init__(self, Name, Moves, Price):
-        super().__init__(Name, Name)
+        super().__init__(Name, Price)
         self.Moves=Moves
-        super().__init__(Price, Price)
 
 Sword=Weapon("Sword", ["Sword Attack", "Shield"], 100)
 Mace=Weapon("Mace", ["Mace Swing"], 70)
@@ -90,7 +83,7 @@ class Enemy():
         self.Gold=Gold
 class Boss(Enemy):
     def __init__(self, Name, Num, HP, EXP, Gold):
-        super().__init__(Name, Name, Num, HP, EXP, Gold)
+        super().__init__(Name, Num, HP, "N/A", EXP, Gold)
 goblin=Enemy("Goblin", 0, 32, 12, 5, 1)
 spider=Enemy("Spider", 1, 24, 16, 10, 2)
 slime=Enemy("Slime", 2, 12, 5, 15, 2)
@@ -114,29 +107,28 @@ class Merchant:
         self.products.remove(item)
     def welcome(x):
         print(f"Welcome to my shop! You can buy items from my catalogue, or sell any sellable item here!")
-Hero=BattleHero(player['PName:'], round(Decimal(player['BaseHP:']*player['HpMultiplier:'])), player['HpMultiplier:'], player['DmgMultiplier:'], player['Moves:'])
+Hero=BattleHero(player['PName:'], round(float(player['BaseHP:']*player['HpMultiplier:'])), player['HpMultiplier:'], player['DmgMultiplier:'], player['Moves:'])
 class moves():
     def __init__(self, name, damage):
         self.name = name
         self.damage = damage
-SwordAttack=moves("Sword Attack", round(Decimal(25)*Decimal(Hero.damagemultiplier)))
-print(SwordAttack.damage)
+SwordAttack=moves("Sword Attack", round(float(25)*float(Hero.damagemultiplier)))
 Shield=moves("Shield", 0)
-MaceSwing=moves("Mace Swing", round(Decimal(30)*Decimal(Hero.damagemultiplier)))
-ShieldBash=moves("Shield Bash", round(Decimal(30)*Decimal(Hero.damagemultiplier)))
+MaceSwing=moves("Mace Swing", round(float(30)*float(Hero.damagemultiplier)))
+ShieldBash=moves("Shield Bash", round(float(30)*float(Hero.damagemultiplier)))
 Block=moves("Block", 0)
-MeteorShower=moves("Meteor Shower", round(Decimal(20)*Decimal(Hero.damagemultiplier)))
-IceShard=moves("Ice Shard", round(Decimal(25)*Decimal(Hero.damagemultiplier)))
+MeteorShower=moves("Meteor Shower", round(float(20)*float(Hero.damagemultiplier)))
+IceShard=moves("Ice Shard", round(float(25)*float(Hero.damagemultiplier)))
 ProtectionSpell=moves("Protection Spell", 0)
-Summon=moves("Summon", round(Decimal(30)*Decimal(Hero.damagemultiplier)))
-Fireball=moves("Fireball", round(Decimal(30)*Decimal(Hero.damagemultiplier)))
-Thunderbolt=moves("Thunderbolt", round(Decimal(25)*Decimal(Hero.damagemultiplier)))
+Summon=moves("Summon", round(float(30)*float(Hero.damagemultiplier)))
+Fireball=moves("Fireball", round(float(30)*float(Hero.damagemultiplier)))
+Thunderbolt=moves("Thunderbolt", round(float(25)*float(Hero.damagemultiplier)))
 Heal=moves("Heal", 0)
-StaffStab=moves("Staff Stab", (round(Decimal(15)*Decimal(Hero.damagemultiplier))))
-NormalArrow=moves("Normal Arrow", (round(Decimal(20)*Decimal(Hero.damagemultiplier))))
-FireArrow=moves("Fire Arrow", round(Decimal(20)*Decimal(Hero.damagemultiplier)))
-IceArrow=moves("Ice Arrow", round(Decimal(20)*Decimal(Hero.damagemultiplier)))
-SlingshotFire=moves("Slingshot Fire", (round(Decimal(25)*Decimal(Hero.damagemultiplier))))
+StaffStab=moves("Staff Stab", (round(float(15)*float(Hero.damagemultiplier))))
+NormalArrow=moves("Normal Arrow", (round(float(20)*float(Hero.damagemultiplier))))
+FireArrow=moves("Fire Arrow", round(float(20)*float(Hero.damagemultiplier)))
+IceArrow=moves("Ice Arrow", round(float(20)*float(Hero.damagemultiplier)))
+SlingshotFire=moves("Slingshot Fire", (round(float(25)*float(Hero.damagemultiplier))))
 GolemSlam=moves("Golem Slam", 55)
 BoulderThrow=moves("Boulder Throw", 45)
 GolemPunch=moves("Golem Punch", 50)
@@ -150,7 +142,7 @@ Fly=moves("Fly", 35)
 BlueFireBreath=moves("Blue Fire Breath", 60)
 Bite=moves("Bite", 50)
 Slam=moves("Slam", 55)
-SwordAttack=moves("Sword Attack", 50)
+SwordAttackBoss=moves("Sword Attack", 50)
 SwordSlam=moves("Sword Slam", 55)
 CrownThrow=moves("Crown Throw", 45)
 SwordSlash=moves("Sword Slash", 60)
