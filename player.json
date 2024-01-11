@@ -91,10 +91,10 @@
             "Shield"
         ],
         "Gold:": [
-            0
+            25
         ],
-        "HpMultiplier:": 1.5,
-        "DmgMultiplier:": 1.5,
+        "HpMultiplier:": 1.8,
+        "DmgMultiplier:": 1.8,
         "Inventory:": [
             "Sword"
         ],
@@ -102,7 +102,7 @@
         "Chestplate:": "N/A",
         "Leggings:": "N/A",
         "Boots:": "N/A",
-        "Level:": 6,
-        "EXP:": 0
+        "Level:": 9,
+        "EXP:": 25
     }
 ]
