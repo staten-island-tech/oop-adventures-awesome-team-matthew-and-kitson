@@ -228,7 +228,7 @@ class battle():
                 hplist.append(nhp)
                 hplist.remove(hplist[0])
                 print(stuff.Hero.name, "is Poisoned!", stuff.Hero.name, "has", nhp, "HP!")
-        if hplist[0]<0:
+        if hplist[0]<=0:
             print(stuff.Hero.name, 'Lost the Battle!')
             return False
         if enemyhplist[1]<=0:
