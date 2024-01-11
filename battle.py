@@ -33,7 +33,7 @@ class battle():
             if y=="Fireball" or "Fire Arrow":
                 burn=pmoves.Fireball(y) or pmoves.FireArrow(y)
             if not enemy.Num==6 and not enemy.Num==8 and not enemy.Num==10:
-                if enemyhplist[1]<0:
+                if enemyhplist[1]<=0:
                     break
             def enemy_attack_check():
                 if shield==True:
@@ -230,8 +230,7 @@ class battle():
                 print(stuff.Hero.name, "is Poisoned!", stuff.Hero.name, "has", nhp, "HP!")
         if hplist[0]<0:
             print(stuff.Hero.name, 'Lost the Battle!')
-            return(False)
-        if enemyhplist[1]<0:
+            return False
+        if enemyhplist[1]<=0:
             print(stuff.Hero.name, 'Won the Battle!')
-            return(True)
-battle.fight(stuff.Dragon)
+            return True
