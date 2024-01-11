@@ -45,6 +45,9 @@ def ultbattle(x):
         print(player['PName:'], "got", x.Gold, "Gold!", "\n", player['PName:'], "got", x.EXP, "EXP!")
         if not player['Level:']==playerlevel:
             print(player['PName:'], "is Level", playerlevel, "!")
+        thing=player['Gold:'][0]+x.Gold
+        player['Gold:'].append(thing)
+        player['Gold:'].remove(player['Gold:'][0])
         player['Level:']=playerlevel    
         player['DmgMultiplier:']=multiplier_calc(1, playerlevel)
         player['HpMultiplier:']=multiplier_calc(1, playerlevel)
@@ -53,13 +56,17 @@ def ultbattle(x):
             json_string = json.dumps(data, indent=4)
             pjson.write(json_string) 
         os.remove("player.json")
-        os.rename(new_file, "player.json") 
+        os.rename(new_file, "player.json")
+        return True
+    else:
+        return False
 def loss():
     print("You have lost. You need to restart this wave.")
     return(False)
 def wave_1():
     print("Wave 1 started!")
-    if ultbattle(stuff.goblin)==True:
+    x=bool(ultbattle(stuff.goblin))
+    if x==True:
         menu()
         if ultbattle(stuff.spider)==True:
             menu()
@@ -100,3 +107,4 @@ def wave_5():
 def final_wave():
     if wave_5()==True:
         print("Final wave started!")
+final_wave()
