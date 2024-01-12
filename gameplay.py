@@ -19,7 +19,7 @@ class gameplay():
         z=random.randint(0, x)
         if z==0:
             print("Item dropped from enemy: ", y.Name)
-            player['Inventory:'].append(y)
+            player['Inventory:'].append(y.Name)
         new_file = "updated.json"
         with open(new_file, "w") as pjson:
             json_string = json.dumps(data, indent=4)
@@ -56,21 +56,21 @@ class gameplay():
             if bq==4:
                 gameplay.ultbattle(y[3])
     def replay():
-        waveq=input("Which wave would you like to replay a battle from?")
-        if waveq=="Wave1":
+        waveq=input("Which wave would you like to replay a battle from? ")
+        if waveq=="Wave 1":
             gameplay.singlewavereplay(gameplay.WaveCheck1, gameplay.wave1)
-        if waveq=="Wave2":
+        if waveq=="Wave 2":
             gameplay.singlewavereplay(gameplay.WaveCheck2, gameplay.wave2)
-        if waveq=="Wave3":
+        if waveq=="Wave 3":
             gameplay.singlewavereplay(gameplay.WaveCheck3, gameplay.wave3)
-        if waveq=="Wave4":
+        if waveq=="Wave 4":
             gameplay.singlewavereplay(gameplay.WaveCheck4, gameplay.wave4)
-        if waveq=="Wave5":
+        if waveq=="Wave 5":
             gameplay.singlewavereplay(gameplay.WaveCheck5, gameplay.wave5)
-        if waveq=="Wave6":
+        if waveq=="Wave 6":
             gameplay.singlewavereplay(gameplay.WaveCheck6, gameplay.wave6)
         else:
-            print("Not a valid wave.") 
+            print("Not a valid wave or not completed.") 
     def menu():
         x=True
         while x==True:
@@ -86,22 +86,23 @@ class gameplay():
     def ultbattle(x):
         if battle.fight(x)==True:
             if x.Num==0:
-                gameplay.item_dropper(5, stuff.Trinket)
+                gameplay.item_dropper(10, stuff.Trinket)
             if x.Num==1:
-                gameplay.item_dropper(4, stuff.Trinket)
+                gameplay.item_dropper(5, stuff.Trinket)
             if x.Num==2:
-                gameplay.item_dropper(2, stuff.Trinket)
+                gameplay.item_dropper(4, stuff.Trinket)
             if x.Num==3:
-                gameplay.item_dropper(1, stuff.Trinket)
+                gameplay.item_dropper(3, stuff.Trinket)
             if x.Num==4:
-                gameplay.item_dropper()
+                gameplay.item_dropper(1, stuff.Trinket)
+                gameplay.item_dropper(5, stuff.Ruby)
             if x.Num==5:
-                gameplay.item_dropper()
+                gameplay.item_dropper(1, stuff.Trinket)
+                gameplay.item_dropper(2, stuff.Silver_Band)
             if x.Num==6:
                 gameplay.item_dropper(2, stuff.Silver_Band)
                 gameplay.item_dropper(2, stuff.Silver_Bangle)
                 gameplay.item_dropper(2, stuff.Silver_Band)
-
             if x.Num==8:
                 gameplay.item_dropper(2, stuff.Gold_Ring)
                 gameplay.item_dropper(2, stuff.Gold_Bangle)
@@ -189,4 +190,3 @@ def final_wave():
         else:
             x=False
     x=True
-final_wave()
