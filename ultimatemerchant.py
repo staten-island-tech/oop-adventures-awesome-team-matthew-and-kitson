@@ -11,62 +11,62 @@ class ultmerchant:
             with open("player.json", "r") as pjson:
                 data = json.load(pjson)
                 goldnum=data[8]['Gold:'][0]
-                print("Gold:", goldnum)
-                for i in range(len(x.products)):
-                    print(x.products[i].Name, ",", x.products[i].Price)
-                find = input("What do you want to buy? If nothing, enter 'break': ")
-                z=None
-                if find=='break':
-                    break
-                productlist=x.products
-                for i in range(len(productlist)):
-                    if find in productlist[i].Name:
-                        remover=productlist[i]
-                        z=productlist[i].Price
-                if not z == None:
-                    if data[8]['Gold:'][0]>=z:
-                        x.sell(remover)    
-                        inventory=data[8]['Inventory:']
-                        inventory.append(remover.Name)
-                        goldlist=data[8]['Gold:']
-                        ngold=goldnum-z
-                        goldlist.append(ngold)
-                        goldlist.remove(goldnum)
-                        new_file = "updated.json"
-                        with open(new_file, "w") as pjson:
-                            json_string = json.dumps(data, indent=4)
-                            pjson.write(json_string)
-                        os.remove("player.json")
-                        os.rename(new_file, "player.json")
-                        print("You have bought", find)
-                    else:
-                        print("You do not have enough money to buy this item.")
+            print("Gold:", goldnum)
+            for i in range(len(x.products)):
+                print(x.products[i].Name, ",", x.products[i].Price)
+            find = input("What do you want to buy? If nothing, enter 'break': ")
+            z=None
+            if find=='break':
+                break
+            productlist=x.products
+            for i in range(len(productlist)):
+                if find in productlist[i].Name:
+                    remover=productlist[i]
+                    z=productlist[i].Price
+            if not z == None:
+                if data[8]['Gold:'][0]>=z:
+                    x.sell(remover)    
+                    inventory=data[8]['Inventory:']
+                    inventory.append(remover.Name)
+                    goldlist=data[8]['Gold:']
+                    ngold=goldnum-z
+                    goldlist.append(ngold)
+                    goldlist.remove(goldnum)
+                    new_file = "updated.json"
+                    with open(new_file, "w") as pjson:
+                        json_string = json.dumps(data, indent=4)
+                        pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
+                    print("You have bought", find)
                 else:
-                    print("Item not found in merchant and/or not an item.")
+                    print("You do not have enough money to buy this item.")
+            else:
+                print("Item not found in merchant and/or not an item.")
     def sell():
         item=None
         with open("player.json", "r") as pjson:
             data = json.load(pjson)
             inventory=data[8]['Inventory:']
             print(inventory)
-            find = input("What do you want to Sell? ")
-            if find in inventory and not find in ultmerchant.nonsellableitems:
-                for i in range(len(ultmerchant.sellableitems)):
-                    if find in ultmerchant.sellableitems[i].Name:
-                        item=ultmerchant.sellableitems[i]
-                        inventory.remove(find)
-                        z=item.Price
-                        goldnum=data[8]['Gold:'][0]
-                        goldlist=data[8]['Gold:']
-                        ngold=goldnum+z
-                        goldlist.append(ngold)
-                        goldlist.remove(goldnum)
-                        new_file = "updated.json"
-                        with open(new_file, "w") as pjson:
-                            json_string = json.dumps(data, indent=4)
-                            pjson.write(json_string)
-                        os.remove("player.json")
-                        os.rename(new_file, "player.json")
+        find = input("What do you want to Sell? ")
+        if find in inventory and not find in ultmerchant.nonsellableitems:
+            for i in range(len(ultmerchant.sellableitems)):
+                if find in ultmerchant.sellableitems[i].Name:
+                    item=ultmerchant.sellableitems[i]
+                    inventory.remove(find)
+                    z=item.Price
+                    goldnum=data[8]['Gold:'][0]
+                    goldlist=data[8]['Gold:']
+                    ngold=goldnum+z
+                    goldlist.append(ngold)
+                    goldlist.remove(goldnum)
+                    new_file = "updated.json"
+                    with open(new_file, "w") as pjson:
+                        json_string = json.dumps(data, indent=4)
+                        pjson.write(json_string)
+                    os.remove("player.json")
+                    os.rename(new_file, "player.json")
         if not item == None:
             print("You have sold", item.Name, "for", item.Price, "Gold!")
         else:
