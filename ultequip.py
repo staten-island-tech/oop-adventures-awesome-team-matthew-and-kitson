@@ -238,5 +238,4 @@ def ultequip():
         elif checkequip=="Unequip":
             unequip()
         else:
-            y=False
             break
