@@ -79,30 +79,5 @@
         "Moves": [
             "Slingshot Fire"
         ]
-    },
-    {
-        "PName:": "Matthew",
-        "Class:": "Knight",
-        "BaseHP:": 100,
-        "Weapon1:": "Sword",
-        "Weapon2:": "N/A",
-        "Moves:": [
-            "Sword Attack",
-            "Shield"
-        ],
-        "Gold:": [
-            25
-        ],
-        "HpMultiplier:": 1.8,
-        "DmgMultiplier:": 1.8,
-        "Inventory:": [
-            "Sword"
-        ],
-        "Helmet:": "N/A",
-        "Chestplate:": "N/A",
-        "Leggings:": "N/A",
-        "Boots:": "N/A",
-        "Level:": 9,
-        "EXP:": 25
     }
 ]
