@@ -84,10 +84,10 @@ class Enemy():
 class Boss(Enemy):
     def __init__(self, Name, Num, HP, EXP, Gold):
         super().__init__(Name, Num, HP, "N/A", EXP, Gold)
-goblin=Enemy("Goblin", 0, 32, 12, 5, 1)
-spider=Enemy("Spider", 1, 24, 16, 10, 2)
-slime=Enemy("Slime", 2, 12, 5, 15, 2)
-zombie=Enemy("Zombie", 3, 43, 27, 20, 5)
+goblin=Enemy("Goblin", 0, 32, 20, 5, 1)
+spider=Enemy("Spider", 1, 24, 25, 10, 2)
+slime=Enemy("Slime", 2, 12, 5, 30, 2)
+zombie=Enemy("Zombie", 3, 43, 40, 20, 5)
 Golem=Boss("Golem", 4, 238, 50, 50)
 Lich=Boss("Lich", 5, 150, 70, 50)
 Dragon=Boss("Dragon", 6, 534, 200, 100)
