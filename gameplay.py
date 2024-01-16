@@ -16,6 +16,9 @@ class gameplay():
         returner=1+(z*.1)
         return(returner)
     def item_dropper(x,y):
+        with open("player.json", "r") as pjson:
+            data = json.load(pjson)
+            player=data[8]
         z=random.randint(0, x)
         if z==0:
             print("Item dropped from enemy: ", y.Name)
