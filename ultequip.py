@@ -1,11 +1,11 @@
 import json
 import os
 import stuff
-with open("player.json", "r") as pjson:
-        data = json.load(pjson)
-        player=data[8]
 weaponlist=stuff.WeaponList
 def bootsequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     for i in range(len(stuff.BootsList)):
         print(stuff.BootsList[i].Name, " ", stuff.BootsList[i].Equipable)
     bootscheck=input("What boots would you like to equip? ")
@@ -25,6 +25,9 @@ def bootsequip():
     else:
         print("Boots already equipped, not in inventory, or unequipable for your class.")
 def leggingsequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     for i in range(len(stuff.LeggingsList)):
         print(stuff.LeggingsList[i].Name, " ", stuff.LeggingsList[i].Equipable)
     leggingscheck=input("What leggings would you like to equip? ")
@@ -44,6 +47,9 @@ def leggingsequip():
     else:
         print("Leggings already equipped, not in inventory, or unequipable for your class.")
 def chestplateequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     for i in range(len(stuff.ChestplateList)):
         print(stuff.ChestplateList[i].Name, " ", stuff.ChestplateList[i].Equipable)
     chestplatecheck=input("What chestplate would you like to equip? ")
@@ -63,6 +69,9 @@ def chestplateequip():
     else:
         print("Chestplate already equipped, not in inventory, or unequipable for your class.")
 def helmetequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     for i in range(len(stuff.HelmetList)):
         print(stuff.HelmetList[i].Name, " ", stuff.HelmetList[i].Equipable)
     helmetcheck=input("What helmet would you like to equip? ")
@@ -82,6 +91,9 @@ def helmetequip():
     else:
         print("Helmet already equipped, not in inventory, or unequipable for your class.")
 def weaponequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     selectweapon=None
     if player['Weapon2:']=="N/A":
         print(player['Inventory:'])
@@ -108,6 +120,9 @@ def weaponequip():
     else:
                 print("Max weapons already equipped.")
 def bootsunequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     bootscheck=player['Boots:']
     if not bootscheck=="N/A":
         for i in range(len(stuff.BootsList)):
@@ -125,6 +140,9 @@ def bootsunequip():
     else:
         print("Boots are not equipped.")
 def leggingsunequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     leggingscheck=player['Leggings:']
     if not leggingscheck=="N/A":
         for i in range(len(stuff.LeggingsList)):
@@ -142,6 +160,9 @@ def leggingsunequip():
     else:
         print("Leggings are not equipped.")
 def chestplateunequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     chestplatechcek=player['Chestplate:']
     if not chestplatechcek=="N/A":
         for i in range(len(stuff.ChestplateList)):
@@ -159,6 +180,9 @@ def chestplateunequip():
     else:
         print("Chestplate are not equipped.")
 def helmetunequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     helmetcheck=player['Helmet:']
     if not helmetcheck=="N/A":
         for i in range(len(stuff.HelmetList)):
@@ -176,6 +200,9 @@ def helmetunequip():
     else:
         print("Helmet is not equipped.")
 def weaponunequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     if not player['Weapon2:']=="N/A":
         weaponcheck=input("What weapon would you like to unequip? ")
         for i in range(len(weaponlist)):
@@ -201,6 +228,9 @@ def weaponunequip():
     else:
         print("You cannot unequip a weapon with only 1 weapon equipped.")
 def equip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     check=input("Would you like to equip a Weapon or Armor? (Enter to go break) " )
     if check=="Armor":
         print(player['Inventory:'])
