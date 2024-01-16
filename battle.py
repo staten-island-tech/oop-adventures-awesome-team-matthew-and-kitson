@@ -1,9 +1,14 @@
 import stuff
 import random
+import json
 from moves import pmoves
 class battle():
     def fight(enemy):
-        hplist=[stuff.Hero.hp]
+        with open("player.json", "r") as pjson:
+            data = json.load(pjson)
+            player=data[8]
+        Hero=stuff.BattleHero(player['PName:'], round(float(player['BaseHP:']*player['HpMultiplier:'])), player['HpMultiplier:'], player['DmgMultiplier:'], player['Moves:'])
+        hplist=[Hero.hp]
         enemyhplist=[enemy.HP, enemy.HP]
         print("You encounter a", enemy.Name,'!')
         global burner
@@ -15,16 +20,16 @@ class battle():
         global phase
         phase=0
         while hplist[0]>0 and enemyhplist[1]>0:
-            print("Moves:", stuff.Hero.moves)
+            print("Moves:", Hero.moves)
             movecheck=True
             while movecheck==True:
                 y=input("What move would you like to use? ")
-                if y in stuff.Hero.moves:
+                if y in Hero.moves:
                     movecheck=False
                 else:
                     print("INVALID MOVE") 
             pmoves.PlayerAttack(y, enemyhplist, enemy)
-            pmoves.Heal(y, hplist[0], round(float(20)*float(stuff.Hero.hpmultiplier)), hplist)
+            pmoves.Heal(y, hplist[0], round(float(20)*float(Hero.hpmultiplier)), hplist)
             shield=pmoves.Shield(y)
             blocked=pmoves.Block(y)
             freeze=pmoves.Ice_Shard(y) or pmoves.Ice_Arrow(y)
@@ -53,7 +58,8 @@ class battle():
             if enemy.Num<4:
                 if enemy_attack_check()==True:
                     pmoves.basicattack(hplist, enemy)
-            if enemy.Num==6 or enemy.Num==8 and phase==1:
+            if enemy.Num==6 and phase ==1 or enemy.Num==8 and phase==1:
+                print("e")
                 if enemyhplist[1]<0:
                     break
             if enemy.Num==10 and phase==2:
@@ -196,11 +202,11 @@ class battle():
                 else:
                     enemyhplist.remove(enemyhplist[0])
                     hp=enemyhplist[0]
-                nhp=hp-round(float(30)*float(stuff.Hero.damagemultiplier))
+                nhp=hp-round(float(30)*float(Hero.damagemultiplier))
                 enemyhplist.append(nhp)
                 if len(enemyhplist)>2:
                     enemyhplist.remove(enemyhplist[0])
-                print("Zombies attacked", enemy.Name, "!", enemy.Name, "took", round(float(30)*float(stuff.Hero.damagemultiplier)), "DMG!", enemy.Name, "has", enemyhplist[1], "HP!")
+                print("Zombies attacked", enemy.Name, "!", enemy.Name, "took", round(float(30)*float(Hero.damagemultiplier)), "DMG!", enemy.Name, "has", enemyhplist[1], "HP!")
             if y=="Fireball" or "Fire Arrow":
                 if burn==True and burner==0:
                     burner=burner+3
@@ -220,17 +226,17 @@ class battle():
                 enemyhplist.append(nhp)
                 if len(enemyhplist)>2:
                     enemyhplist.remove(enemyhplist[0])
-                print(enemy["Name:"], "was Burned!", enemy["Name:"], "took", 10, "DMG!", enemy["Name:"], "has", enemyhplist[1], "HP!")
+                print(enemy.Name, "was Burned!", enemy.Name, "took", 10, "DMG!", enemy.Name, "has", enemyhplist[1], "HP!")
             if not poison_dmg==0:
                 poison_dmg=poison_dmg-1
                 hp=hplist[0]
                 nhp=hp-45
                 hplist.append(nhp)
                 hplist.remove(hplist[0])
-                print(stuff.Hero.name, "is Poisoned!", stuff.Hero.name, "has", nhp, "HP!")
+                print(Hero.name, "is Poisoned!", Hero.name, "has", nhp, "HP!")
         if hplist[0]<=0:
-            print(stuff.Hero.name, 'Lost the Battle!')
+            print(Hero.name, 'Lost the Battle!')
             return False
         if enemyhplist[1]<=0:
-            print(stuff.Hero.name, 'Won the Battle!')
+            print(Hero.name, 'Won the Battle!')
             return True
