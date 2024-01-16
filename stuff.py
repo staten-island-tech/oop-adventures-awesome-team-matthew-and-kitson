@@ -1,4 +1,7 @@
 import json
+with open("player.json", "r") as pjson:
+    data = json.load(pjson)
+    player=data[8]
 class items():
     def __init__(self, Name, Price):
         self.Name = Name
@@ -6,63 +9,59 @@ class items():
 class Moneyitem(items):
     def __init__(self, Name, Price):
         super().__init__(Name, Price)
-with open("player.json", "r") as pjson:
-    data = json.load(pjson)
-    player=data[8]
-    Trinket=Moneyitem("Trinket", 19)
-    Gold_Goblet=Moneyitem("Gold Goblet", 43)
-    Silver_Goblet=Moneyitem("Silver Goblet", 18)
-    Gold_Ring=Moneyitem("Gold Ring", 39)
-    Silver_Ring=Moneyitem("Silver Ring", 13)
-    Gold_Necklace=Moneyitem("Gold Necklace", 37)
-    Silver_Necklace=Moneyitem("Silver Necklace", 23)
-    Gold_Band=Moneyitem("Gold Band", 30)
-    Silver_Band=Moneyitem("Silver Band", 20)
-    Gold_Bangle=Moneyitem("Gold Bangle", 25)
-    Silver_Bangle=Moneyitem("Silver Bangle", 15)
-    Diamond=Moneyitem("Diamond", 50)
-    Ruby=Moneyitem("Ruby", 35)
-    class Helmet(items):
-        def __init__(self, Equipable, Name, HP, Price):
-            self.Equipable=Equipable
-            super().__init__(Name, Price)
-            self.HP = HP
-    LeatherHelmet=Helmet(["Healer", "SpellCaster"], "Leather Helmet", 7, 67)
-    PlateHelmet=Helmet(["Knight", "Tank"], "Plated Helmet", 17, 89)
-    ConeHat=Helmet(["Mage", "Necromancer", "Healer", "Spellcaster"], "Cone Hat", 13, 54)
-    HelmetList=[ConeHat, PlateHelmet, LeatherHelmet]
-    class Chestplate(items):
-        def __init__(self, Equipable, Name, HP, Price):
-            self.Equipable=Equipable
-            super().__init__(Name, Price)
-            self.HP = HP
-    LeatherChestplate=Chestplate(["Healer", "SpellCaster"],"Leather Chestplate", .1, 64)
-    MagicRobe=Chestplate(["Mage", "Necromancer"], "Magic Robe", .3, 43)
-    PlateChest=Chestplate(["Knight", "Tank"], "Plated Chestplate", .5, 78)
-    ChestplateList=[PlateChest, MagicRobe, LeatherChestplate]
-    class Leggings(items):
-        def __init__(self, Equipable, Name, HP, Price):
-            self.Equipable=Equipable
-            super().__init__(Name, Price)
-            self.HP = HP
-    Trousers=Leggings(["Mage", "Necromancer", "Knight"], "Trousers", 8, 43)
-    LeatherLeggings=Leggings(["Healer", "SpellCaster"], "Leather Leggings", 10, 56)
-    PlateLeggings=Leggings(["Knight", "Tank"], "Plated Leggings", 23, 86)
-    LeggingsList=[PlateLeggings, LeatherLeggings, Trousers]
-    class Boots(items):
-        def __init__(self, Equipable, Name, HP, Price):
-            self.Equipable=Equipable
-            super().__init__(Name, Price)
-            self.HP = HP
-    LeatherBoots=Boots(["Mage", "Necromancer", "Knight"], "Leather Boots", 5, 12)
-    HeavyBoots=Boots(["Healer", "SpellCaster"], "Heavy Boots", 11, 26)
-    PlateBoots=Boots(["Knight", "Tank"], "Plated Boots", 19, 29)
-    BootsList=[PlateBoots, HeavyBoots, LeatherBoots]
+Trinket=Moneyitem("Trinket", 19)
+Gold_Goblet=Moneyitem("Gold Goblet", 43)
+Silver_Goblet=Moneyitem("Silver Goblet", 18)
+Gold_Ring=Moneyitem("Gold Ring", 39)
+Silver_Ring=Moneyitem("Silver Ring", 13)
+Gold_Necklace=Moneyitem("Gold Necklace", 37)
+Silver_Necklace=Moneyitem("Silver Necklace", 23)
+Gold_Band=Moneyitem("Gold Band", 30)
+Silver_Band=Moneyitem("Silver Band", 20)
+Gold_Bangle=Moneyitem("Gold Bangle", 25)
+Silver_Bangle=Moneyitem("Silver Bangle", 15)
+Diamond=Moneyitem("Diamond", 50)
+Ruby=Moneyitem("Ruby", 35)
+class Helmet(items):
+    def __init__(self, Equipable, Name, HP, Price):
+        self.Equipable=Equipable
+        super().__init__(Name, Price)
+        self.HP = HP
+LeatherHelmet=Helmet(["Healer", "SpellCaster"], "Leather Helmet", 7, 67)
+PlateHelmet=Helmet(["Knight", "Tank"], "Plated Helmet", 17, 89)
+ConeHat=Helmet(["Mage", "Necromancer", "Healer", "Spellcaster"], "Cone Hat", 13, 54)
+HelmetList=[ConeHat, PlateHelmet, LeatherHelmet]
+class Chestplate(items):
+    def __init__(self, Equipable, Name, HP, Price):
+        self.Equipable=Equipable
+        super().__init__(Name, Price)
+        self.HP = HP
+LeatherChestplate=Chestplate(["Healer", "SpellCaster"],"Leather Chestplate", .1, 64)
+MagicRobe=Chestplate(["Mage", "Necromancer"], "Magic Robe", .3, 43)
+PlateChest=Chestplate(["Knight", "Tank"], "Plated Chestplate", .5, 78)
+ChestplateList=[PlateChest, MagicRobe, LeatherChestplate]
+class Leggings(items):
+    def __init__(self, Equipable, Name, HP, Price):
+        self.Equipable=Equipable
+        super().__init__(Name, Price)
+        self.HP = HP
+Trousers=Leggings(["Mage", "Necromancer", "Knight"], "Trousers", 8, 43)
+LeatherLeggings=Leggings(["Healer", "SpellCaster"], "Leather Leggings", 10, 56)
+PlateLeggings=Leggings(["Knight", "Tank"], "Plated Leggings", 23, 86)
+LeggingsList=[PlateLeggings, LeatherLeggings, Trousers]
+class Boots(items):
+    def __init__(self, Equipable, Name, HP, Price):
+        self.Equipable=Equipable
+        super().__init__(Name, Price)
+        self.HP = HP
+LeatherBoots=Boots(["Mage", "Necromancer", "Knight"], "Leather Boots", 5, 12)
+HeavyBoots=Boots(["Healer", "SpellCaster"], "Heavy Boots", 11, 26)
+PlateBoots=Boots(["Knight", "Tank"], "Plated Boots", 19, 29)
+BootsList=[PlateBoots, HeavyBoots, LeatherBoots]
 class Weapon(items):
     def __init__(self, Name, Moves, Price):
         super().__init__(Name, Price)
         self.Moves=Moves
-
 Sword=Weapon("Sword", ["Sword Attack", "Shield"], 100)
 Mace=Weapon("Mace", ["Mace Swing"], 70)
 Shield=Weapon("Shield", ["Shield Bash", "Block"], 100)
@@ -107,11 +106,11 @@ class Merchant:
         self.products.remove(item)
     def welcome(x):
         print(f"Welcome to my shop! You can buy items from my catalogue, or sell any sellable item here!")
-Hero=BattleHero(player['PName:'], round(float(player['BaseHP:']*player['HpMultiplier:'])), player['HpMultiplier:'], player['DmgMultiplier:'], player['Moves:'])
 class moves():
     def __init__(self, name, damage):
         self.name = name
         self.damage = damage
+Hero=BattleHero(player['PName:'], round(float(player['BaseHP:']*player['HpMultiplier:'])), player['HpMultiplier:'], player['DmgMultiplier:'], player['Moves:'])
 SwordAttack=moves("Sword Attack", round(float(25)*float(Hero.damagemultiplier)))
 Shield=moves("Shield", 0)
 MaceSwing=moves("Mace Swing", round(float(30)*float(Hero.damagemultiplier)))
