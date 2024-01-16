@@ -100,10 +100,11 @@ def weaponequip():
         weaponcheck=input("What weapon would you like to equip? ")
         if weaponcheck in player['Inventory:']:
             for i in range(len(weaponlist)):
-                if weaponcheck in weaponlist[i].Name:
+                if weaponcheck == weaponlist[i].Name:
                     selectweapon=weaponlist[i]
             if not selectweapon == None and not selectweapon.Name==player['Weapon2:'] and not selectweapon.Name==player['Weapon1:']:
-                print(player['Weapon2:'], "was equipped!")
+                player['Weapon2:']==selectweapon.Name
+                print(selectweapon.Name, "was equipped!")
                 for i in range(len(selectweapon.Moves)):
                     player['Moves:'].append(selectweapon.Moves[i])
                 new_file = "updated.json"
