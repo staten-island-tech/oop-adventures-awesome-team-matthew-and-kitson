@@ -79,5 +79,40 @@
         "Moves": [
             "Slingshot Fire"
         ]
+    },
+    {
+        "PName:": "jd",
+        "Class:": "Knight",
+        "BaseHP:": 159,
+        "Weapon1:": "Staff",
+        "Weapon2:": "Bow",
+        "Moves:": [
+            "Meteor Shower",
+            "Ice Shard",
+            "Protection Spell",
+            "Normal Arrow",
+            "Fire Arrow",
+            "Ice Arrow"
+        ],
+        "Gold:": [
+            86
+        ],
+        "HpMultiplier:": 2.8,
+        "DmgMultiplier:": 2.3,
+        "Inventory:": [
+            "Sword",
+            "Plated Boots",
+            "Plated Chestplate",
+            "Plated Helmet",
+            "Plated Leggings",
+            "Staff",
+            "Bow"
+        ],
+        "Helmet:": "Plated Helmet",
+        "Chestplate:": "Plated Chestplate",
+        "Leggings:": "Plated Leggings",
+        "Boots:": "Plated Boots",
+        "Level:": 14,
+        "EXP:": 0
     }
 ]
