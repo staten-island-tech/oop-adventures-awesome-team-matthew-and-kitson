@@ -46,7 +46,7 @@ class gameplay():
     WaveCheck6=False
     def singlewavereplay(x, y, z):
         if x==True:
-            bq=input("What battle # would you like to replay? (1-4, enter 'Merchant' to buy from the merchant from said Wave.)")
+            bq=input("What battle # would you like to replay? (1-4, enter 'Merchant' to buy from the merchant from said Wave.) ")
             if bq=="1":
                 gameplay.ultbattle(y[0])
             if bq=="2":
