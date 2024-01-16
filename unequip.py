@@ -1,11 +1,11 @@
 import json
 import os
 import stuff
-with open("player.json", "r") as pjson:
-        data = json.load(pjson)
-        player=data[8]
 weaponlist=stuff.WeaponList
 def unequip():
+    with open("player.json", "r") as pjson:
+        data = json.load(pjson)
+        player=data[8]
     check=input("Would you like to unequip a Weapon or Armor? (Enter to go break) " )
     if check=="Armor":
         armorcheck=input("Would you like to unequip Boots, Leggings, a Chestplate, or a Helmet? ")
